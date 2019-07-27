@@ -1,5 +1,64 @@
-<section id="about">
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="card text-white bg-primary">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12 col-12">
+                                <font>27 July 2019 12.44 </font>
+                                <p style="margin-bottom:0px">
+                                    <font>Harga Emas Hari Ini</font>
+                                </p>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-6">
+                                <font>Harga Beli </font>
+                                <p style="margin-bottom:0px">
+                                    <font>Rp 600,000/gram</font>
+                                </p>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-6">
+                                <font>Harga Jual </font>
+                                <p style="margin-bottom:0px">
+                                    <font>Rp 700,000/gram</font>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="mt-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="card text-white bg-primary">
+                    <div id="accordion">
+                        <div class="card bg-primary">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Grafik Harga Beli/Jual
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+</section>
+<section id="about">
     <div class="container">
         <div class="row">
 
