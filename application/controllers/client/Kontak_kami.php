@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Kontak_kami extends CI_Controller
 {
 
     public function index()
     {
-        $this->template->load('template', 'tampilan/v_home');
+        $this->template->load('template', 'tampilan/v_kontak_kami');
     }
 }

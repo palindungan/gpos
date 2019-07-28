@@ -15,7 +15,13 @@
     <!-- End of Header -->
 
     <!-- Intro -->
-    <?php $this->load->view("_partials/intro.php") ?>
+    <?php
+
+    if ($this->uri->segment('2') == 'home') {
+        $this->load->view("_partials/intro.php");
+    }
+
+    ?>
     <!-- End of Intro -->
 
     <main id="main">
@@ -39,6 +45,7 @@
 
     <!-- JavaScript Libraries -->
     <?php $this->load->view("_partials/java_script.php") ?>
+    <!-- End of JavaScript Libraries -->
 
 </body>
 

@@ -23,10 +23,3 @@
 
 <!-- Main Stylesheet File -->
 <link href="<?= base_url() ?>assets/template/css/style.css" rel="stylesheet">
-
-<!-- =======================================================
-    Theme Name: Rapid
-    Theme URL: https://bootstrapmade.com/rapid-multipurpose-bootstrap-business-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
