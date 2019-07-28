@@ -5,21 +5,6 @@ if ($this->uri->segment('1') == 'home') {
     echo '<header id="header2">';
 }
 ?>
-<?php
-if ($this->uri->segment('1') == 'home') {
-    echo '
-<div id="topbar">
-    <div class="container">
-        <div class="social-links">
-            <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
-            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-        </div>
-    </div>
-</div>
-';
-}
-?>
 
 <div class="container">
 
