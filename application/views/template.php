@@ -18,7 +18,7 @@
     <!-- Intro -->
     <?php
 
-    if ($this->uri->segment('2') == 'home') {
+    if ($this->uri->segment('1') == 'home') {
         $this->load->view("_partials/intro.php");
     }
 

@@ -53,6 +53,11 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = true;
 
+$route['transaksi'] = 'client/data_transaksi';
+$route['home'] = 'client/home';
+$route['kasir'] = 'client/kasir';
+$route['kontak_kami'] = 'client/kontak_kami';
+
 /*
 | -------------------------------------------------------------------------
 | Sample REST API Routes
