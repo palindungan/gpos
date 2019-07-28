@@ -31,10 +31,18 @@ if ($this->uri->segment('1') == 'home') {
 
     <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-            <li><a href="<?= base_url() . 'home' ?>">Home</a></li>
-            <li><a href="<?= base_url() . 'kasir' ?>">Kasir</a></li>
-            <li><a href="<?= base_url() . 'transaksi' ?>">Data Transaksi</a></li>
-            <li><a href="<?= base_url() . 'kontak_kami' ?>">Kontak Kami</a></li>
+            <li class="<?php if ($this->uri->segment(1) == "home") {
+                            echo 'active';
+                        } ?>"><a href="<?= base_url() . 'home' ?>">Home</a></li>
+            <li class="<?php if ($this->uri->segment(1) == "kasir") {
+                            echo 'active';
+                        } ?>"><a href="<?= base_url() . 'kasir' ?>">Kasir</a></li>
+            <li class="<?php if ($this->uri->segment(1) == "transaksi") {
+                            echo 'active';
+                        } ?>"><a href="<?= base_url() . 'transaksi' ?>">Data Transaksi</a></li>
+            <li class="<?php if ($this->uri->segment(1) == "kontak_kami") {
+                            echo 'active';
+                        } ?>"><a href="<?= base_url() . 'kontak_kami' ?>">Kontak Kami</a></li>
         </ul>
     </nav><!-- .main-nav -->
 
