@@ -26,7 +26,7 @@
     <link href="<?= base_url() ?>assets/template/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Main Stylesheet File -->
-    <link href="<?= base_url() ?>assets/template/css/style.css" rel="stylesheet">
+    <link href="<?= base_url() ?>assets/template/css/style2.css" rel="stylesheet">
 
     <!-- =======================================================
     Theme Name: Rapid
@@ -42,17 +42,6 @@
   ============================-->
     <header id="header">
 
-        <div id="topbar">
-            <div class="container">
-                <div class="social-links">
-                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-
         <div class="container">
 
             <div class="logo float-left">
@@ -63,8 +52,8 @@
 
             <nav class="main-nav float-right d-none d-lg-block">
                 <ul>
-                    <li class="active"><a href="<?= base_url() . 'test' ?>">Home</a></li>
-                    <li><a href="<?= base_url() . 'test/about' ?>">About Us</a></li>
+                    <li><a href="<?= base_url() . 'test' ?>">Home</a></li>
+                    <li class="active"><a href="<?= base_url() . 'test/about' ?>">About Us</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a></li>
@@ -95,35 +84,14 @@
     <!--==========================
     Intro Section
   ============================-->
-    <section id="intro" class="clearfix">
-        <div class="container d-flex h-100">
-            <div class="row justify-content-center align-self-center">
-                <div class="col-md-6 intro-info order-md-first order-last">
-                    <h2>Rapid Solutions<br>for Your <span>Business!</span></h2>
-                    <div>
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 intro-img order-md-last order-first">
-                    <img src="assets/template/img/intro-img.svg" alt="" class="img-fluid">
-                </div>
-            </div>
-
-        </div>
-    </section><!-- #intro -->
-
     <main id="main">
-
         <!-- INI CONTENT LOAD DARI VIEW -->
-        <?php echo $contents; ?>
-
+        <div style="margin-top:5.5%;">
+            <?php echo $contents; ?>
+        </div>
 
     </main>
-
-    <!--==========================
-    Footer
-  ============================-->
+    <!--==========================Footer============================-->
     <footer id="footer" class="section-bg">
         <div class="footer-top">
             <div class="container">
