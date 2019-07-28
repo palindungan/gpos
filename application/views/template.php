@@ -11,6 +11,7 @@
 
 <body>
     <!-- Header -->
+
     <?php $this->load->view("_partials/header.php") ?>
     <!-- End of Header -->
 
