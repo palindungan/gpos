@@ -509,6 +509,9 @@ h6 {
 
 /* Sections Header
 --------------------------------*/
+.section-mt {
+	margin-top: 5.5%;
+}
 
 .section-header h3 {
 	font-size: 36px;
@@ -1530,6 +1533,16 @@ h6 {
 		padding: 8px 0;
 	}
 
+	#header2 {
+		height: 70px;
+		padding: 15px 0;
+	}
+
+	#header2 .logo h1 {
+		font-size: 28px;
+		padding: 8px 0;
+	}
+
 	#why-us .why-us-content {
 		padding-top: 30px;
 	}
@@ -1540,6 +1553,10 @@ h6 {
 
 	#pricing .card {
 		margin-bottom: 50px;
+	}
+
+	.section-mt {
+		margin-top: 7.7%;
 	}
 }
 
@@ -1599,10 +1616,42 @@ h6 {
 	#testimonials .testimonial-item p {
 		margin-left: 0;
 	}
+
+	.section-mt {
+		margin-top: 10%;
+	}
 }
+
 
 @media (max-width: 574px) {
 	#footer .footer-top .social-links a {
 		margin-bottom: 25px;
 	}
+
+	.section-mt {
+		margin-top: 14.7%;
+	}
+}
+
+
+
+.jumbotron {
+	border-radius: 0px;
+	background:
+		linear-gradient(rgba(0, 0, 250, 0.25),
+			rgba(125, 250, 250, 0.45)),
+		url(https://source.unsplash.com/1600x1050/?nature);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color: white !important;
+	height: 420px;
+	text-align: center;
+}
+
+
+
+.lead {
+	font-family: raleway;
+	font-weight: 100;
+	margin-top: -10px;
 }
