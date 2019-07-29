@@ -1631,27 +1631,28 @@ h6 {
 	.section-mt {
 		margin-top: 14.7%;
 	}
+
 }
 
 
-
+/* Parallax */
 .jumbotron {
 	border-radius: 0px;
-	background:
+	background-image:
 		linear-gradient(rgba(0, 0, 250, 0.25),
 			rgba(125, 250, 250, 0.45)),
 		url(https://source.unsplash.com/1600x1050/?nature);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	color: white !important;
-	height: 420px;
 	text-align: center;
+	height: 100;
 }
-
-
 
 .lead {
 	font-family: raleway;
 	font-weight: 100;
 	margin-top: -10px;
 }
+
+/* tutup Parallax */
