@@ -9,44 +9,50 @@
 
 </head>
 
-<body>
-    <!-- Header -->
+<?php
+if ($this->uri->segment('1') == 'home') {
+    echo '<body>';
+} else {
+    echo '<body class="body-custom">';
+}
+?>
+<!-- Header -->
 
-    <?php $this->load->view("_partials/header.php") ?>
-    <!-- End of Header -->
+<?php $this->load->view("_partials/header.php") ?>
+<!-- End of Header -->
 
-    <!-- Intro -->
-    <?php
+<!-- Intro -->
+<?php
 
-    if ($this->uri->segment('1') == 'home') {
-        $this->load->view("_partials/intro.php");
-    }
+if ($this->uri->segment('1') == 'home') {
+    $this->load->view("_partials/intro.php");
+}
 
-    ?>
-    <!-- End of Intro -->
+?>
+<!-- End of Intro -->
 
-    <main id="main">
+<main id="main">
 
-        <!-- Content -->
-        <?php echo $contents; ?>
-        <!-- End of Content -->
+    <!-- Content -->
+    <?php echo $contents; ?>
+    <!-- End of Content -->
 
-    </main>
+</main>
 
-    <!-- Footer -->
-    <?php $this->load->view("_partials/footer.php") ?>
-    <!-- End of Footer -->
+<!-- Footer -->
+<?php $this->load->view("_partials/footer.php") ?>
+<!-- End of Footer -->
 
-    <!-- back to top button -->
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    <!-- End of back to top button -->
+<!-- back to top button -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<!-- End of back to top button -->
 
-    <!-- Uncomment below i you want to use a preloader -->
-    <!-- <div id="preloader"></div> -->
+<!-- Uncomment below i you want to use a preloader -->
+<!-- <div id="preloader"></div> -->
 
-    <!-- JavaScript Libraries -->
-    <?php $this->load->view("_partials/java_script.php") ?>
-    <!-- End of JavaScript Libraries -->
+<!-- JavaScript Libraries -->
+<?php $this->load->view("_partials/java_script.php") ?>
+<!-- End of JavaScript Libraries -->
 
 </body>
 

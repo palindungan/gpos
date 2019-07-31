@@ -10,10 +10,13 @@
 --------------------------------------------------------------*/
 
 body {
-	padding-top: 70px;
 	background: #fff;
 	color: #444;
 	font-family: "Open Sans", sans-serif;
+}
+
+.body-custom {
+	padding-top: 70px;
 }
 
 a {
@@ -1262,7 +1265,7 @@ h6 {
 }
 
 #footer .footer-top {
-	padding: 60px 0 30px 0;
+	padding: 20px 0 30px 0;
 	background: #f5f8fd;
 }
 
@@ -1643,4 +1646,9 @@ h6 {
 	margin-top: -10px;
 }
 
-/* tutup Parallax */
+/* custom-margin */
+.padding-transaksi {
+	padding: 50px 0px 20px 0px;
+}
+
+/* tutup custom */
