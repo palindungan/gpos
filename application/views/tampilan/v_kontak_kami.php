@@ -1,43 +1,12 @@
 <section class="section-bg section-mt">
-    <div class="jumbotron ">
+    <div class="jumbotron jumbotron-contact">
         <div class="container">
             <h1 class="display-3">Contact</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <p class="lead">Kami Siap Melayani Anda!</p>
         </div>
     </div>
 </section>
-<section id="team" class="section-bg">
-    <div class="container">
-        <br><br>
-        <div class="section-header">
-            <h3>Contact Us</h3>
-        </div>
-
-        <div class="row">
-
-            <!-- asdsad -->
-
-        </div>
-
-    </div>
-</section><!-- #team -->
-
-<section class="section-bg">
-    <div class="container">
-        <div class="section-header">
-            <h3>Kunjungi Kami</h3>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="embed-responsive  embed-responsive-21by9">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.421534099567!2d113.7209046497943!3d-8.160214883986251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd695a2d2b47e7f%3A0xe79b0880bc21be38!2sPoliteknik+Negeri+Jember!5e0!3m2!1sid!2sid!4v1564319307909!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-<section id="testimonials">
+<section class="mb-5 mt-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
@@ -125,3 +94,18 @@
 
     </div>
 </section><!-- #testimonials -->
+<section class="mb-5">
+    <div class="container">
+        <div class="section-header">
+            <h3>Kunjungi Kami</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="embed-responsive  embed-responsive-21by9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.421534099567!2d113.7209046497943!3d-8.160214883986251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd695a2d2b47e7f%3A0xe79b0880bc21be38!2sPoliteknik+Negeri+Jember!5e0!3m2!1sid!2sid!4v1564319307909!5m2!1sid!2sid" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
