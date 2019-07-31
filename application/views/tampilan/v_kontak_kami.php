@@ -1,4 +1,4 @@
-<section class="section-bg section-mt">
+<section class="section-bg">
     <div class="jumbotron jumbotron-contact">
         <div class="container">
             <h1 class="display-3">Contact</h1>
