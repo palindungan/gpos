@@ -28,6 +28,7 @@ if ($this->uri->segment('1') == 'home') {
             <li class="<?php if ($this->uri->segment(1) == "kontak_kami") {
                             echo 'active';
                         } ?>"><a href="<?= base_url() . 'kontak_kami' ?>">Kontak Kami</a></li>
+            <li class=""><a href="<?= base_url() . 'admin/home' ?>">Link Backend</a></li>
         </ul>
     </nav><!-- .main-nav -->
 
