@@ -155,7 +155,7 @@
                             <a href="#">
                                 <div class="recent-post-flex">
                                     <div class="recent-post-img">
-                                        <img src="img/post/2.jpg" alt="" />
+                                        <img src="<?= base_url() ?>assets/template_user/img/post/2.jpg" alt="" />
                                     </div>
                                     <div class="recent-post-it-ctn">
                                         <h2>Smith</h2>
@@ -168,7 +168,7 @@
                             <a href="#">
                                 <div class="recent-post-flex rct-pt-mg">
                                     <div class="recent-post-img">
-                                        <img src="img/post/1.jpg" alt="" />
+                                        <img src="<?= base_url() ?>assets/template_user/img/post/1.jpg" alt="" />
                                     </div>
                                     <div class="recent-post-it-ctn">
                                         <h2>John Deo</h2>
@@ -181,7 +181,7 @@
                             <a href="#">
                                 <div class="recent-post-flex rct-pt-mg">
                                     <div class="recent-post-img">
-                                        <img src="img/post/4.jpg" alt="" />
+                                        <img src="<?= base_url() ?>assets/template_user/img/post/4.jpg" alt="" />
                                     </div>
                                     <div class="recent-post-it-ctn">
                                         <h2>Malika</h2>
@@ -194,7 +194,7 @@
                             <a href="#">
                                 <div class="recent-post-flex rct-pt-mg">
                                     <div class="recent-post-img">
-                                        <img src="img/post/2.jpg" alt="" />
+                                        <img src="<?= base_url() ?>assets/template_user/img/post/2.jpg" alt="" />
                                     </div>
                                     <div class="recent-post-it-ctn">
                                         <h2>Smith</h2>
@@ -207,7 +207,7 @@
                             <a href="#">
                                 <div class="recent-post-flex rct-pt-mg">
                                     <div class="recent-post-img">
-                                        <img src="img/post/1.jpg" alt="" />
+                                        <img src="<?= base_url() ?>assets/template_user/img/post/1.jpg" alt="" />
                                     </div>
                                     <div class="recent-post-it-ctn">
                                         <h2>John Deo</h2>
@@ -310,7 +310,7 @@
                         <h5>September 4, 21:44:02 (2 Mins 56 Seconds)</h5>
                         <div class="realtime-ctn-bw">
                             <div class="realtime-ctn-st">
-                                <span><img src="img/country/1.png" alt="" /></span> <span>United States</span>
+                                <span><img src="<?= base_url() ?>assets/template_user/img/country/1.png" alt="" /></span> <span>United States</span>
                             </div>
                             <div class="realtime-bw">
                                 <span>Firefox</span>
@@ -324,7 +324,7 @@
                         <h5>September 7, 20:44:02 (5 Mins 56 Seconds)</h5>
                         <div class="realtime-ctn-bw">
                             <div class="realtime-ctn-st">
-                                <span><img src="img/country/2.png" alt="" /></span> <span>Australia</span>
+                                <span><img src="<?= base_url() ?>assets/template_user/img/country/2.png" alt="" /></span> <span>Australia</span>
                             </div>
                             <div class="realtime-bw">
                                 <span>Firefox</span>
@@ -338,7 +338,7 @@
                         <h5>September 9, 19:44:02 (10 Mins 56 Seconds)</h5>
                         <div class="realtime-ctn-bw">
                             <div class="realtime-ctn-st">
-                                <span><img src="img/country/3.png" alt="" /></span> <span>Brazil</span>
+                                <span><img src="<?= base_url() ?>assets/template_user/img/country/3.png" alt="" /></span> <span>Brazil</span>
                             </div>
                             <div class="realtime-bw">
                                 <span>Firefox</span>
@@ -403,7 +403,7 @@
                                 <ul class="conversation-list">
                                     <li class="clearfix">
                                         <div class="chat-avatar">
-                                            <img src="img/post/1.jpg" alt="male">
+                                            <img src="<?= base_url() ?>assets/template_user/img/post/1.jpg" alt="male">
                                             <i>10:00</i>
                                         </div>
                                         <div class="conversation-text">
@@ -417,7 +417,7 @@
                                     </li>
                                     <li class="clearfix odd">
                                         <div class="chat-avatar">
-                                            <img src="img/post/2.jpg" alt="Female">
+                                            <img src="<?= base_url() ?>assets/template_user/img/post/2.jpg" alt="Female">
                                             <i>10:01</i>
                                         </div>
                                         <div class="conversation-text">
@@ -431,7 +431,7 @@
                                     </li>
                                     <li class="clearfix">
                                         <div class="chat-avatar">
-                                            <img src="img/post/1.jpg" alt="male">
+                                            <img src="<?= base_url() ?>assets/template_user/img/post/1.jpg" alt="male">
                                             <i>10:01</i>
                                         </div>
                                         <div class="conversation-text">
@@ -445,7 +445,7 @@
                                     </li>
                                     <li class="clearfix odd">
                                         <div class="chat-avatar">
-                                            <img src="img/post/2.jpg" alt="male">
+                                            <img src="<?= base_url() ?>assets/template_user/img/post/2.jpg" alt="male">
                                             <i>10:02</i>
                                         </div>
                                         <div class="conversation-text">
@@ -459,7 +459,7 @@
                                     </li>
                                     <li class="clearfix">
                                         <div class="chat-avatar">
-                                            <img src="img/post/1.jpg" alt="male">
+                                            <img src="<?= base_url() ?>assets/template_user/img/post/1.jpg" alt="male">
                                             <i>10:01</i>
                                         </div>
                                         <div class="conversation-text">
@@ -473,7 +473,7 @@
                                     </li>
                                     <li class="clearfix odd">
                                         <div class="chat-avatar">
-                                            <img src="img/post/2.jpg" alt="male">
+                                            <img src="<?= base_url() ?>assets/template_user/img/post/2.jpg" alt="male">
                                             <i>10:02</i>
                                         </div>
                                         <div class="conversation-text">
