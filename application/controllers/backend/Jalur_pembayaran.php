@@ -16,8 +16,29 @@ class Jalur_pembayaran extends CI_Controller
     // untuk ke menu tambah form
     public function tambah_jalur_pembayaran()
     {
-        $this->template->load('template_backend', 'tampilan_backend/v_jalur_pembayaran');
+        $this->template->load('template_backend', 'tampilan_backend/jalur_pembayaran/v_tambah_form');
     }
+
+    // untuk ke menu data tabel 
+    public function data_tabel_jalur_pembayaran()
+    {
+
+        $data['tbl_data'] = $this->M_jalur_pembayaran->tampil_data()->result();
+
+        $this->template->load('template_backend', 'tampilan_backend/jalur_pembayaran/v_data_table', $data);
+    }
+
+     // untuk ke menu edit data
+     public function edit_jalur_pembayaran($id_jalur)
+     {
+         // memasukkan data ke array
+         $where = array('id_jalur' => $id_jalur);
+ 
+         // fungsi result adalah mengenerate hasil querry menjadi array untuk di tampilkan
+         $data['tbl_data'] = $this->M_jalur_pembayaran->edit_data('jalur_pembayaran', $where)->result();
+ 
+         $this->template->load('template_backend', 'tampilan_backend/jalur_pembayaran/v_edit_form', $data);
+     }
 
 
     function tambah_aksi()
@@ -37,5 +58,37 @@ class Jalur_pembayaran extends CI_Controller
 
         // kembali ke halaman utama
         redirect('backend/jalur_pembayaran/tambah_jalur_pembayaran');
+    }
+
+    function hapus_aksi()
+    {
+        // mengambil data dari ajax bertipe post
+        $id_jalur = $this->input->post('id_jalur');
+
+        // memasukkan data ke dalam array assoc
+        $where['id_jalur'] = $id_jalur;
+
+        $this->M_jalur_pembayaran->hapus_data('jalur_pembayaran', $where);
+    }
+
+    function update_aksi()
+    {
+        // mengambil dari inputan (name)
+        $id_jalur = $this->input->post('id_jalur');
+        $nm_jalur = $this->input->post('nm_jalur');
+
+        // memasukkan data ke dalam array assoc
+        $data = array(
+            'id_jalur' => $id_jalur,
+            'nm_jalur' => $nm_jalur
+        );
+
+        // memasukkan data ke dalam array assoc
+        $where['id_jalur'] = $id_jalur;
+
+        $this->M_jalur_pembayaran->update_data($where, $data, 'jalur_pembayaran');
+
+        // kembali ke halaman utama
+        redirect('backend/jalur_pembayaran/data_tabel_jalur_pembayaran');
     }
 }
