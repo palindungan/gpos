@@ -49,21 +49,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Examples: my-controller/index -> my_controller/index
 |   my-controller/my-method -> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'frontend/home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = true;
 
-// Client
-$route['transaksi'] = 'client/data_transaksi';
-$route['home'] = 'client/home';
-$route['kasir'] = 'client/kasir';
-$route['kontak_kami'] = 'client/kontak_kami';
-// Tutup Client
+// FrontEnd
+$route['transaksi'] = 'frontend/data_transaksi';
+$route['home'] = 'frontend/home';
+$route['kontak_kami'] = 'frontend/kontak_kami';
+// Tutup FrontEnd
 
 // Backend
-$route['admin/home'] = 'admin_backend/home_backend';
+$route['backend'] = 'backend/home_backend';
 // tutup backend
+
+// User
+$route['user'] = 'user/home_user';
+// Tutup user
+
+
 /*
+
 | -------------------------------------------------------------------------
 | Sample REST API Routes
 | -------------------------------------------------------------------------
