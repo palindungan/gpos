@@ -3,7 +3,7 @@
 
 <head>
     <!-- header -->
-    <?php $this->load->view("_partials_backend/head_backend.php") ?>
+    <?php $this->load->view("_partials_backend/head.php") ?>
     <!-- end header -->
 
 </head>
@@ -15,7 +15,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view("_partials_backend/sidebar_backend.php") ?>
+        <?php $this->load->view("_partials_backend/sidebar.php") ?>
 
         <!-- End of Sidebar -->
 
@@ -26,7 +26,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <?php $this->load->view("_partials_backend/topbar_backend.php") ?>
+                <?php $this->load->view("_partials_backend/topbar.php") ?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -37,7 +37,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <?php $this->load->view("_partials_backend/footer_backend.php") ?>
+            <?php $this->load->view("_partials_backend/footer.php") ?>
 
             <!-- End of Footer -->
 
@@ -52,7 +52,7 @@
 
 
     <!-- Bootstrap core JavaScript-->
-    <?php $this->load->view("_partials_backend/javascript_backend.php") ?>
+    <?php $this->load->view("_partials_backend/javascript.php") ?>
 
 
 </body>
