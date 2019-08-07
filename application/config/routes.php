@@ -60,11 +60,11 @@ $route['kontak_kami'] = 'frontend/kontak_kami';
 // Tutup FrontEnd
 
 // Backend
-$route['backend'] = 'backend/home_backend';
+$route['backend'] = 'backend/home';
 // tutup backend
 
 // User
-$route['user'] = 'user/home_user';
+$route['user'] = 'user/home';
 // Tutup user
 
 
