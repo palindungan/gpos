@@ -13,7 +13,18 @@
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Tambah Paket License</h6>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_paket_license') {
+                                                    echo 'active';
+                                                } ?>" href="<?php echo base_url(); ?>backend/paket_license/tambah_paket_license">Tambah Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_paket_license') {
+                                                    echo 'active';
+                                                } ?>" href="<?php echo base_url(); ?>backend/paket_license/data_tabel_paket_license">Daftar Paket</a>
+                        </li>
+                    </ul>
                     <div class="dropdown no-arrow">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
