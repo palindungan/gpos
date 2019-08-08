@@ -56,8 +56,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= base_url() ?>backend/home">Paket</a>
-                <a class="collapse-item" href="<?= base_url() ?>backend/home">Jalur Pembayaran</a>
+                <a class="collapse-item" href="<?= base_url() ?>backend/paket_license/tambah_paket_license">Paket License</a>
+                <a class="collapse-item" href="<?= base_url() ?>backend/jalur_pembayaran/tambah_jalur_pembayaran">Jalur Pembayaran</a>
             </div>
         </div>
     </li>
@@ -70,8 +70,8 @@
         </a>
         <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= base_url() ?>backend/home">Bentuk Perhiasan</a>
-                <a class="collapse-item" href="<?= base_url() ?>backend/home">Level User</a>
+                <a class="collapse-item" href="<?= base_url() ?>backend/bentuk_perhiasan/tambah_bentuk_perhiasan">Bentuk Perhiasan</a>
+                <a class="collapse-item" href="<?= base_url() ?>backend/level_user/tambah_level_user">Level User</a>
             </div>
         </div>
     </li>
