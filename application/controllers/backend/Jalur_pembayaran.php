@@ -28,17 +28,17 @@ class Jalur_pembayaran extends CI_Controller
         $this->template->load('template_backend', 'tampilan_backend/jalur_pembayaran/v_data_table', $data);
     }
 
-     // untuk ke menu edit data
-     public function edit_jalur_pembayaran($id_jalur)
-     {
-         // memasukkan data ke array
-         $where = array('id_jalur' => $id_jalur);
- 
-         // fungsi result adalah mengenerate hasil querry menjadi array untuk di tampilkan
-         $data['tbl_data'] = $this->M_jalur_pembayaran->edit_data('jalur_pembayaran', $where)->result();
- 
-         $this->template->load('template_backend', 'tampilan_backend/jalur_pembayaran/v_edit_form', $data);
-     }
+    // untuk ke menu edit data
+    public function edit_jalur_pembayaran($id_jalur)
+    {
+        // memasukkan data ke array
+        $where = array('id_jalur' => $id_jalur);
+
+        // fungsi result adalah mengenerate hasil querry menjadi array untuk di tampilkan
+        $data['tbl_data'] = $this->M_jalur_pembayaran->edit_data('jalur_pembayaran', $where)->result();
+
+        $this->template->load('template_backend', 'tampilan_backend/jalur_pembayaran/v_edit_form', $data);
+    }
 
 
     function tambah_aksi()
@@ -60,15 +60,13 @@ class Jalur_pembayaran extends CI_Controller
         redirect('backend/jalur_pembayaran/tambah_jalur_pembayaran');
     }
 
-    function hapus_aksi()
+    function hapus_aksi($id)
     {
-        // mengambil data dari ajax bertipe post
-        $id_jalur = $this->input->post('id_jalur');
-
         // memasukkan data ke dalam array assoc
-        $where['id_jalur'] = $id_jalur;
+        $where['id_jalur'] = $id;
 
         $this->M_jalur_pembayaran->hapus_data('jalur_pembayaran', $where);
+        redirect('backend/jalur_pembayaran/tambah_jalur_pembayaran');
     }
 
     function update_aksi()

@@ -51,6 +51,7 @@
                             <tr>
                                 <th>Kode Jalur</th>
                                 <th>Nama jalur</th>
+                                <th>Aksi</th>
                                 <th class="nosort">&nbsp;</th>
                             </tr>
                         </thead>
@@ -62,7 +63,7 @@
                                     <td>
                                         <div class="table-actions">
                                             <a href="<?php echo site_url('backend/jalur_pembayaran/edit_jalur_pembayaran/' . $d->id_jalur) ?>">Edit</a>
-                                            <a href="javascript:void(0)" class="hapus" id="<?php echo $d->id_jalur ?>" name="<?php echo $d->nm_jalur ?>">Hapus</a>
+                                            <a onclick="return confirm('Ingin Menghapus Data?');" href="<?= site_url('backend/jalur_pembayaran/hapus_aksi/' . $d->id_jalur) ?>" class="hapus">Hapus</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -76,46 +77,3 @@
 
     </div>
 </div>
-
-<!-- untuk ajax -->
-<script src="<?= base_url() ?>assets/template_backend/vendor/jquery/jquery-3.3.1.min.js"></script>
-
-<!-- script logika -->
-<script type="text/javascript">
-    $(document).ready(function() {
-
-        // delete dan validasinya
-        $(".hapus").click(function() {
-            var name = $(this).attr("name");
-            var jawab = confirm("Ingin Menghapus Data " + name + " ?");
-            if (jawab === true) {
-                // kita set hapus false untuk mencegah duplicate request
-                var hapus = false;
-                if (!hapus) {
-                    hapus = true;
-                    // ajax
-                    var m = $(this).attr("id");
-                    // alert(m);
-                    $.ajax({
-                        url: "<?php echo base_url() . 'backend/jalur_pembayaran/hapus_aksi'; ?>",
-                        type: "post",
-                        data: {
-                            id_jalur: m
-                        },
-                        success: function(data) {
-                            alert("Data " + name + " berhasil Terhapus");
-                            location.reload();
-                        }
-                    });
-                    // ajax
-                    hapus = false;
-                }
-            } else {
-                return false;
-            }
-        });
-        // end of delete dan validasinya
-
-    });
-</script>
-<!-- script logika -->
