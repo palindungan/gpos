@@ -46,32 +46,47 @@ class User_backend extends CI_Controller
         // mengambil dari inputan (name)
         $kode = $this->M_user_backend->get_no();
         $nm_user_b = $this->input->post('nm_user_b');
-
         $jenkel = $this->input->post('jenkel');
         $almt_user_b = $this->input->post('almt_user_b');
         $no_hp = $this->input->post('no_hp');
-
         $email_user_b = $this->input->post('email_user_b');
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        // memasukkan data ke dalam array assoc
-        $data = array(
-            'id_user_b' => $kode,
-            'nm_user_b' => $nm_user_b,
-            'jenkel' => $jenkel,
-            'almt_user_b' => $almt_user_b,
-            'no_hp' => $no_hp,
-            'email_user_b' => $email_user_b,
-            'username' => $username,
-            'password' => $password
-        );
+        $k_password = $this->input->post('k_password');
+        if ($k_password == $password) {
 
-        // mengirim data ke model untuk diinputkan ke dalam database
-        $this->M_user_backend->input_data('user_backend', $data);
+            // memasukkan data ke dalam array assoc
+            $data = array(
+                'id_user_b' => $kode,
+                'nm_user_b' => $nm_user_b,
+                'jenkel' => $jenkel,
+                'almt_user_b' => $almt_user_b,
+                'no_hp' => $no_hp,
+                'email_user_b' => $email_user_b,
+                'username' => $username,
+                'password' => password_hash($password, PASSWORD_DEFAULT)
+            );
 
-        // kembali ke halaman utama
-        redirect('backend/user_backend/tambah_user_backend');
+            // mengambil jumlah baris
+            $cek = $this->M_user_backend->ambil_data($username)->num_rows();
+
+            if ($cek > 0) {
+
+                // pemberitahuan dan pindah page window
+                echo "<script>alert('Tidak Boleh Ada 2 Username yang Sama'); window.location = '" . base_url('backend/user_backend/tambah_user_backend') . "';</script>";
+            } else {
+
+                // mengirim data ke model untuk diinputkan ke dalam database
+                $this->M_user_backend->input_data('user_backend', $data);
+
+                // kembali ke halaman utama
+                // redirect('backend/user_backend/tambah_user_backend');
+                echo "<script>alert('Berhasil Menambah Data !'); window.location = '" . base_url('backend/user_backend/tambah_user_backend') . "';</script>";
+            }
+        } else {   // pemberitahuan dan pindah page window
+            echo "<script>alert('Password dan konfirmasi password harus sama !!'); window.location = '" . base_url('backend/user_backend/tambah_user_backend') . "';</script>";
+        }
     }
 
     function hapus_aksi($id)
@@ -88,33 +103,50 @@ class User_backend extends CI_Controller
         // mengambil dari inputan (name)
         $id_user_b = $this->input->post('id_user_b');
         $nm_user_b = $this->input->post('nm_user_b');
-
         $jenkel = $this->input->post('jenkel');
         $almt_user_b = $this->input->post('almt_user_b');
         $no_hp = $this->input->post('no_hp');
-
         $email_user_b = $this->input->post('email_user_b');
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        // memasukkan data ke dalam array assoc
-        $data = array(
-            'id_user_b' => $id_user_b,
-            'nm_user_b' => $nm_user_b,
-            'jenkel' => $jenkel,
-            'almt_user_b' => $almt_user_b,
-            'no_hp' => $no_hp,
-            'email_user_b' => $email_user_b,
-            'username' => $username,
-            'password' => $password
-        );
+        $k_password = $this->input->post('k_password');
 
-        // memasukkan data ke dalam array assoc
-        $where['id_user_b'] = $id_user_b;
+        if ($k_password == $password) {
 
-        $this->M_user_backend->update_data($where, $data, 'user_backend');
+            // memasukkan data ke dalam array assoc
+            $data = array(
+                'id_user_b' => $id_user_b,
+                'nm_user_b' => $nm_user_b,
+                'jenkel' => $jenkel,
+                'almt_user_b' => $almt_user_b,
+                'no_hp' => $no_hp,
+                'email_user_b' => $email_user_b,
+                'username' => $username,
+                'password' => password_hash($password, PASSWORD_DEFAULT)
+            );
 
-        // kembali ke halaman utama
-        redirect('backend/user_backend/data_tabel_user_backend');
+            // mengambil jumlah baris
+            $cek = $this->M_user_backend->ambil_data($username)->num_rows();
+
+            if ($cek > 1) {
+
+                // pemberitahuan dan pindah page window
+                echo "<script>alert('Tidak Boleh Ada 2 Username yang Sama'); window.location = '" . base_url('backend/user_backend/data_tabel_user_backend') . "';</script>";
+            } else {
+
+                // memasukkan data ke dalam array assoc
+                $where['id_user_b'] = $id_user_b;
+
+                $this->M_user_backend->update_data($where, $data, 'user_backend');
+
+                // kembali ke halaman utama
+                // redirect('backend/user_backend/data_tabel_user_backend');
+                // pemberitahuan dan pindah page window
+                echo "<script>alert('Berhasil Update Data !'); window.location = '" . base_url('backend/user_backend/data_tabel_user_backend') . "';</script>";
+            }
+        } else {   // pemberitahuan dan pindah page window
+            echo "<script>alert('Password dan konfirmasi password harus sama !!'); window.location = '" . base_url('backend/user_backend/data_tabel_user_backend') . "';</script>";
+        }
     }
 }
