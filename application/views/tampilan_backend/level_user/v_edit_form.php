@@ -16,14 +16,14 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_jalur_pembayaran') {
+                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_paket_license') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/jalur_pembayaran/tambah_jalur_pembayaran">Tambah Jalur</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/level_user/tambah_level_user">Tambah Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_jalur_pembayaran') {
+                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_level_user') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/jalur_pembayaran/data_tabel_jalur_pembayaran">Data Tabel Jalur</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/level_user/data_tabel_level_user">Daftar Level</a>
                         </li>
                     </ul>
 
@@ -47,36 +47,30 @@
                     <!-- disini isinya konten -->
                     <?php foreach ($tbl_data as $d2) { ?>
 
-                        <?php echo form_open_multipart('backend/paket_license/update_aksi'); ?>
-                            <div class="row">
-                                <div class="col-md-6">
+                        <?php echo form_open_multipart('backend/level_user/update_aksi'); ?>
+                        <div class="row">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="id_paket">Kode Paket</label>
-                                    <input type="text" class="form-control" id="id_paket" name="id_paket" readonly="" value="<?php echo $d2->id_paket ?>">
+                                    <label for="id_level">ID Level</label>
+                                    <input type="text" class="form-control" id="id_level" name="id_level" placeholder="ID Level" required="" oninvalid="this.setCustomValidity('Isi ID Level')" oninput="setCustomValidity('')" readonly value="<?= $d2->id_level ?>">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="nm_paketr">Nama Paket</label>
-                                    <input type="text" class="form-control" id="nm_paketr" name="nm_paket" placeholder="Nama Paket" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= $d2->nm_paket ?>">
+                                    <label for="nm_level">Nama Level</label>
+                                    <input type="text" class="form-control" id="nm_level" name="nm_level" placeholder="Nama Level" required="" oninvalid="this.setCustomValidity('Isi Nama Level')" oninput="setCustomValidity('')" value="<?= $d2->nm_level ?>">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="hrg_paket">Harga Paket</label>
-                                    <input type="text" class="form-control" id="hrg_paket" name="hrg_paket" placeholder="Harga Paket" required="" oninvalid="this.setCustomValidity('Isi Harga Paket')" oninput="setCustomValidity('')" value="<?= $d2->hrg_paket ?>">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="jml_hari">Jumlah Hari License</label>
-                                    <input type="text" class="form-control" id="jml_hari" name="jml_hari" placeholder="Jumlah Hari License" required="" oninvalid="this.setCustomValidity('Isi Jumlah Hari License')" oninput="setCustomValidity('')" value="<?= $d2->jml_hari_license ?>">
+                                    <label for="jml_max">Jumlah Max</label>
+                                    <input type="text" class="form-control" id="jml_max" name="jml_max" placeholder="Jumlah Max" required="" oninvalid="this.setCustomValidity('Isi Jumlah Max')" oninput="setCustomValidity('')" value="<?= $d2->jml_max ?>">
                                 </div>
                             </div>
                         </div>
 
                         <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                        <a href="<?= base_url().'backend/paket_license/data_tabel_paket_license' ?>" class="btn btn-danger">Kembali</a>
+                        <a href="<?= base_url().'backend/level_user/data_tabel_level_user' ?>" class="btn btn-danger">Kembali</a>
 
                         </form>
 

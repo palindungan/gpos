@@ -55,7 +55,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Kembali</button>
+                    <a href="<?= base_url().'backend/jalur_pembayaran/data_tabel_jalur_pembayaran' ?>" class="btn btn-danger">Kembali</a>
 
                     </form>
                 </div>

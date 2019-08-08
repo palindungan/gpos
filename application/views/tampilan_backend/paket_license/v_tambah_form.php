@@ -65,7 +65,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Kembali</button>
+                    <a href="<?= base_url().'backend/paket_license/data_tabel_paket_license' ?>" class="btn btn-danger">Kembali</a>
 
                     </form>
                 </div>
