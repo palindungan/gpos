@@ -20,7 +20,7 @@
 
     <!-- Nav Item - Daftar User -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url() ?>backend/home">
+        <a class="nav-link" href="<?= base_url() ?>backend/user_backend/tambah_user_backend">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Daftar User</span></a>
     </li>
