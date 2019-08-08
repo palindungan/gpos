@@ -2,7 +2,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Level User</h1>
+        <h1 class="h3 mb-0 text-gray-800">Daftar User</h1>
         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
     </div>
 
@@ -16,14 +16,14 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_paket_license') {
+                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_user_backend') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/level_user/tambah_level_user">Tambah Data</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/user_backend/tambah_user_backend">Tambah Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_level_user') {
+                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_user_backend') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/level_user/data_tabel_level_user">Daftar Level</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/user_backend/data_tabel_user_backend">Daftar User</a>
                         </li>
                     </ul>
 
@@ -49,23 +49,36 @@
                     <table id="data_table" class="table">
                         <thead>
                             <tr>
-                                <th>Kode Level</th>
-                                <th>Nama Level</th>
-                                <th>Jumlah Max</th>
-                                <th>Aksi</th>
+                                <th>Kode User</th>
+                                <th>Nama</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Alamat</th>
+                                <th>No Hp</th>
+                                <th>Email</th>
+                                <th>Username</th>
+                                <th>Tanggal Registrasi</th>
+                                <th>Last Log In</th>
                                 <th class="nosort">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($level_user as $d) {  ?>
+                            <?php foreach ($tbl_data as $d) {  ?>
                                 <tr>
-                                    <td><?= $d->id_level ?></td>
-                                    <td><?= $d->nm_level ?></td>
-                                    <td><?= $d->jml_max ?></td>
+                                    <td><?= $d->id_user_b ?></td>
+                                    <td><?= $d->nm_user_b ?></td>
+                                    <td><?= $d->jenkel ?></td>
+
+                                    <td><?= $d->almt_user_b ?></td>
+                                    <td><?= $d->no_hp ?></td>
+                                    <td><?= $d->email_user_b ?></td>
+
+                                    <td><?= $d->username ?></td>
+                                    <td><?= $d->tgl_regist ?></td>
+                                    <td><?= $d->tgl_last_log_in ?></td>
                                     <td>
                                         <div class="table-actions">
-                                            <a href="<?= site_url('backend/level_user/edit_level_user/' . $d->id_level) ?>">Edit</a>
-                                            <a onclick="return confirm('Ingin Menghapus Data?');" href="<?= site_url('backend/level_user/hapus_aksi/' . $d->id_level) ?>" class="hapus">Hapus</a>
+                                            <a href="<?= site_url('backend/user_backend/edit_user_backend/' . $d->id_user_b) ?>">Edit</a>
+                                            <a onclick="return confirm('Ingin Menghapus Data?');" href="<?= site_url('backend/user_backend/hapus_aksi/' . $d->id_user_b) ?>" class="hapus">Hapus</a>
                                         </div>
                                     </td>
                                 </tr>

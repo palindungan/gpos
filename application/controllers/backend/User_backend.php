@@ -29,10 +29,10 @@ class User_backend extends CI_Controller
     }
 
     // untuk ke menu edit data
-    public function edit_user_backend($id_jalur)
+    public function edit_user_backend($id_user_b)
     {
         // memasukkan data ke array
-        $where = array('id_jalur' => $id_jalur);
+        $where = array('id_user_b' => $id_user_b);
 
         // fungsi result adalah mengenerate hasil querry menjadi array untuk di tampilkan
         $data['tbl_data'] = $this->M_user_backend->edit_data('user_backend', $where)->result();
@@ -45,12 +45,26 @@ class User_backend extends CI_Controller
     {
         // mengambil dari inputan (name)
         $kode = $this->M_user_backend->get_no();
-        $nm_jalur = $this->input->post('nm_jalur');
+        $nm_user_b = $this->input->post('nm_user_b');
+
+        $jenkel = $this->input->post('jenkel');
+        $almt_user_b = $this->input->post('almt_user_b');
+        $no_hp = $this->input->post('no_hp');
+
+        $email_user_b = $this->input->post('email_user_b');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
 
         // memasukkan data ke dalam array assoc
         $data = array(
-            'id_jalur' => $kode,
-            'nm_jalur' => $nm_jalur
+            'id_user_b' => $kode,
+            'nm_user_b' => $nm_user_b,
+            'jenkel' => $jenkel,
+            'almt_user_b' => $almt_user_b,
+            'no_hp' => $no_hp,
+            'email_user_b' => $email_user_b,
+            'username' => $username,
+            'password' => $password
         );
 
         // mengirim data ke model untuk diinputkan ke dalam database
@@ -63,26 +77,40 @@ class User_backend extends CI_Controller
     function hapus_aksi($id)
     {
         // memasukkan data ke dalam array assoc
-        $where['id_jalur'] = $id;
+        $where['id_user_b'] = $id;
 
         $this->M_user_backend->hapus_data('user_backend', $where);
-        redirect('backend/user_backend/tambah_user_backend');
+        redirect('backend/user_backend/data_tabel_user_backend');
     }
 
     function update_aksi()
     {
         // mengambil dari inputan (name)
-        $id_jalur = $this->input->post('id_jalur');
-        $nm_jalur = $this->input->post('nm_jalur');
+        $id_user_b = $this->input->post('id_user_b');
+        $nm_user_b = $this->input->post('nm_user_b');
+
+        $jenkel = $this->input->post('jenkel');
+        $almt_user_b = $this->input->post('almt_user_b');
+        $no_hp = $this->input->post('no_hp');
+
+        $email_user_b = $this->input->post('email_user_b');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
 
         // memasukkan data ke dalam array assoc
         $data = array(
-            'id_jalur' => $id_jalur,
-            'nm_jalur' => $nm_jalur
+            'id_user_b' => $id_user_b,
+            'nm_user_b' => $nm_user_b,
+            'jenkel' => $jenkel,
+            'almt_user_b' => $almt_user_b,
+            'no_hp' => $no_hp,
+            'email_user_b' => $email_user_b,
+            'username' => $username,
+            'password' => $password
         );
 
         // memasukkan data ke dalam array assoc
-        $where['id_jalur'] = $id_jalur;
+        $where['id_user_b'] = $id_user_b;
 
         $this->M_user_backend->update_data($where, $data, 'user_backend');
 

@@ -15,14 +15,14 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_level_user') {
+                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_user_backend') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/level_user/tambah_level_user">Tambah Data</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/user_backend/tambah_user_backend">Tambah Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_level_user') {
+                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_user_backend') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/level_user/data_tabel_level_user">Daftar User</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/user_backend/data_tabel_user_backend">Daftar User</a>
                         </li>
                     </ul>
                     <div class="dropdown no-arrow">
@@ -42,7 +42,7 @@
                 <div class="card-body">
                     <!-- disini isinya konten -->
 
-                    <?php echo form_open_multipart('backend/level_user/tambah_aksi'); ?>
+                    <?php echo form_open_multipart('backend/user_backend/tambah_aksi'); ?>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -100,7 +100,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <a href="<?= base_url() . 'backend/level_user/data_tabel_level_user' ?>" class="btn btn-danger">Kembali</a>
+                    <a href="<?= base_url() . 'backend/user_backend/data_tabel_user_backend' ?>" class="btn btn-danger">Kembali</a>
 
                     </form>
                 </div>
