@@ -41,26 +41,26 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <!-- disini isinya konten -->
-                     <?php foreach ($tbl_data as $d2) { ?>
+                    <?php foreach ($tbl_data as $d2) { ?>
 
                         <?php echo form_open_multipart('backend/bentuk_perhiasan/update_aksi'); ?>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="id_kat">ID Bentuk</label>
-                                    <input type="text" class="form-control" id="id_kat" name="id_kat" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= $d2->id_kat ?>" readonly>
+                                    <input type="text" class="form-control" id="id_kat" name="id_bentuk" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= $d2->id_bentuk ?>" readonly>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="id_user_backend">ID Backend</label>
-                                    <input type="text" class="form-control" id="id_user_backend" name="id_user_backend" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= $d2->id_user_backend ?>" readonly>
+                                    <input type="text" class="form-control" id="id_user_backend" name="id_user_backend" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= $d2->id_user_b ?>" readonly>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="nm_kat">Nama Bentuk</label>
-                                    <input type="text" class="form-control" id="nm_kat" name="nm_kat" placeholder="Bentuk Perhiasan" required="" oninvalid="this.setCustomValidity('Isi Bentuk Perhiasan')" oninput="setCustomValidity('')" value="<?= $d2->nm_kat ?>">
+                                    <label for="nm_bentuk">Nama Bentuk</label>
+                                    <input type="text" class="form-control" id="nm_bentuk" name="nm_bentuk" placeholder="Bentuk Perhiasan" required="" oninvalid="this.setCustomValidity('Isi Bentuk Perhiasan')" oninput="setCustomValidity('')" value="<?= $d2->nm_bentuk ?>">
                                 </div>
                             </div>
                         </div>

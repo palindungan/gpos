@@ -60,14 +60,14 @@
                         <tbody>
                             <?php foreach ($bentuk_perhiasan as $d) {  ?>
                                 <tr>
-                                    <td><?= $d->id_kat ?></td>
-                                    <td><?= $d->id_user_backend ?></td>
-                                    <td><?= $d->nm_kat ?></td>
+                                    <td><?= $d->id_bentuk ?></td>
+                                    <td><?= $d->id_user_b ?></td>
+                                    <td><?= $d->nm_bentuk ?></td>
                                     <td><?= $d->tgl_input ?></td>
                                     <td>
                                         <div class="table-actions">
-                                            <a href="<?= site_url('backend/bentuk_perhiasan/edit_bentuk_perhiasan/' . $d->id_kat) ?>">Edit</a>
-                                            <a onclick="return confirm('Ingin Menghapus Data?');" href="<?= site_url('backend/bentuk_perhiasan/hapus_aksi/' . $d->id_kat) ?>" class="hapus">Hapus</a>
+                                            <a href="<?= site_url('backend/bentuk_perhiasan/edit_bentuk_perhiasan/' . $d->id_bentuk) ?>">Edit</a>
+                                            <a onclick="return confirm('Ingin Menghapus Data?');" href="<?= site_url('backend/bentuk_perhiasan/hapus_aksi/' . $d->id_bentuk) ?>" class="hapus">Hapus</a>
                                         </div>
                                     </td>
                                 </tr>

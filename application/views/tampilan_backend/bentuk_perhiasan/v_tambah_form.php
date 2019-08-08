@@ -46,20 +46,20 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="id_user_backend">ID Backend</label>
-                                <input type="text" class="form-control" id="id_user_backend" name="id_user_backend" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="UB01" readonly>
+                                <label for="id_user_b">ID Backend</label>
+                                <input type="text" class="form-control" id="id_user_b" name="id_user_b" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="UB01" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="nm_kat">Nama Bentuk</label>
-                                <input type="text" class="form-control" id="nm_kat" name="nm_kat" placeholder="Bentuk Perhiasan" required="" oninvalid="this.setCustomValidity('Isi Bentuk Perhiasan')" oninput="setCustomValidity('')">
+                                <label for="nm_bentuk">Nama Bentuk</label>
+                                <input type="text" class="form-control" id="nm_bentuk" name="nm_bentuk" placeholder="Bentuk Perhiasan" required="" oninvalid="this.setCustomValidity('Isi Bentuk Perhiasan')" oninput="setCustomValidity('')">
                             </div>
                         </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <a href="<?= base_url().'backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan' ?>" class="btn btn-danger">Kembali</a>
+                    <a href="<?= base_url() . 'backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan' ?>" class="btn btn-danger">Kembali</a>
                     </form>
                 </div>
             </div>

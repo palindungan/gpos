@@ -27,19 +27,19 @@ class Bentuk_perhiasan extends CI_Controller
     {
         // mengambil dari inputan (name)
         $kode = $this->M_bentuk_perhiasan->get_no();
-        $id_user_backend = $this->input->post('id_user_backend');
-        $nm_kat = $this->input->post('nm_kat');
+        $id_user_b = $this->input->post('id_user_b');
+        $nm_bentuk = $this->input->post('nm_bentuk');
         $now = date('Y-m-d H:i:s');
         // memasukkan data ke dalam array assoc
         $data = array(
-            'id_kat' => $kode,
-            'id_user_backend' => $id_user_backend,
-            'nm_kat' => $nm_kat,
+            'id_bentuk' => $kode,
+            'id_user_b' => $id_user_b,
+            'nm_bentuk' => $nm_bentuk,
             'tgl_input' => $now
         );
 
         // mengirim data ke model untuk diinputkan ke dalam database
-        $this->M_bentuk_perhiasan->input_data('kategori', $data);
+        $this->M_bentuk_perhiasan->input_data('bentuk_perhiasan', $data);
 
         // kembali ke halaman utama
         redirect('backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan');
@@ -48,33 +48,33 @@ class Bentuk_perhiasan extends CI_Controller
     public function edit_bentuk_perhiasan($id)
     {
         // memasukkan data ke array
-        $where = array('id_kat' => $id);
+        $where = array('id_bentuk' => $id);
 
         // fungsi result adalah mengenerate hasil querry menjadi array untuk di tampilkan
-        $data['tbl_data'] = $this->M_bentuk_perhiasan->edit_data('kategori', $where)->result();
+        $data['tbl_data'] = $this->M_bentuk_perhiasan->edit_data('bentuk_perhiasan', $where)->result();
 
         $this->template->load('template_backend', 'tampilan_backend/bentuk_perhiasan/v_edit_form', $data);
     }
     function update_aksi()
     {
         // mengambil dari inputan (name)
-        $id_kat = $this->input->post('id_kat');
-        $id_user_backend = $this->input->post('id_user_backend');
-        $nm_kat = $this->input->post('nm_kat');
+        $id_bentuk = $this->input->post('id_bentuk');
+        $id_user_b = $this->input->post('id_user_b');
+        $nm_bentuk = $this->input->post('nm_bentuk');
         $now = date('Y-m-d H:i:s');
 
         // memasukkan data ke dalam array assoc
         $data = array(
-            'id_kat' => $id_kat,
-            'id_user_backend' => $id_user_backend,
-            'nm_kat' => $nm_kat,
+            'id_bentuk' => $id_bentuk,
+            'id_user_b' => $id_user_b,
+            'nm_bentuk' => $nm_bentuk,
             'tgl_input' => $now
         );
 
         // memasukkan data ke dalam array assoc
-        $where['id_kat'] = $id_kat;
+        $where['id_bentuk'] = $id_bentuk;
 
-        $this->M_bentuk_perhiasan->update_data($where, $data, 'kategori');
+        $this->M_bentuk_perhiasan->update_data($where, $data, 'bentuk_perhiasan');
 
         // kembali ke halaman utama
         redirect('backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan');
@@ -82,9 +82,9 @@ class Bentuk_perhiasan extends CI_Controller
     function hapus_aksi($id)
     {
         // memasukkan data ke dalam array assoc
-        $where['id_kat'] = $id;
+        $where['id_bentuk'] = $id;
 
-        $this->M_bentuk_perhiasan->hapus_data('kategori', $where);
+        $this->M_bentuk_perhiasan->hapus_data('bentuk_perhiasan', $where);
 
         redirect('backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan');
     }

@@ -5,7 +5,7 @@ class M_bentuk_perhiasan extends CI_Model
     // mengambil semua data pada tabel
     function tampil_data()
     {
-        return $this->db->get('kategori');
+        return $this->db->get('bentuk_perhiasan');
     }
 
     // untuk input data ke dalam database
@@ -40,8 +40,8 @@ class M_bentuk_perhiasan extends CI_Model
     // autogenerate kode / ID
     function get_no()
     {
-        $field = "id_kat";
-        $tabel = "kategori";
+        $field = "id_bentuk";
+        $tabel = "bentuk_perhiasan";
         $digit = "2";
         $kode = "K";
 
