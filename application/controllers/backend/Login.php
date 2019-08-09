@@ -36,27 +36,40 @@ class Login extends CI_Controller
             foreach ($query->result_array() as $row) {
 
                 // dicek apakah data inputan sama dengan data di database
-                if ($password == $row["password"]) {
+                if (password_verify($password, $row["password"])) {
 
                     // session
                     $data_session = array(
-                        'kode_user' => $row['kode_user'],
-                        'nama_user' => $row['nama_user'],
-                        'username' => $username,
-                        'password' => $password,
-                        'status' => 'login'
+                        'id_user_b' => $row['id_user_b'],
+                        'nm_user_b' => $row['nm_user_b'],
+                        'username' => $username
                     );
                     $this->session->set_userdata($data_session);
 
+                    // mengupdate data tgl_last_log_in di database
+                    date_default_timezone_set('Asia/Jakarta');
+                    $id_user_b = $row['id_user_b'];
+                    $now = date('Y-m-d H:i:s');
+
+                    // memasukkan data ke dalam array assoc
+                    $data = array(
+                        'tgl_last_log_in' => $now
+                    );
+
+                    // memasukkan data ke dalam array assoc
+                    $where['id_user_b'] = $id_user_b;
+
+                    $this->M_login->update_data($where, $data, 'user_backend');
+
                     // link
-                    redirect('admin/dashboard');
+                    redirect('backend/home');
                 } else {
-                    echo "<script> alert('Password Anda Salah'); window.location.href = '" . base_url() . "login/login'; </script>";
+                    echo "<script> alert('Password Anda Salah'); window.location.href = '" . base_url() . "backend/login'; </script>";
                 }
             }
         } else {
 
-            echo "<script> alert('Username Tidak Ada'); window.location.href = '" . base_url() . "login/login'; </script>";
+            echo "<script> alert('Username Tidak Ada'); window.location.href = '" . base_url() . "backend/login'; </script>";
         }
     }
 

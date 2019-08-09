@@ -43,6 +43,8 @@ class User_backend extends CI_Controller
 
     function tambah_aksi()
     {
+        date_default_timezone_set('Asia/Jakarta');
+
         // mengambil dari inputan (name)
         $kode = $this->M_user_backend->get_no();
         $nm_user_b = $this->input->post('nm_user_b');
@@ -141,11 +143,9 @@ class User_backend extends CI_Controller
                 // redirect('backend/user_backend/data_tabel_user_backend');
                 // pemberitahuan dan pindah page window
                 echo "<script>alert('Berhasil Update Data !'); window.location = '" . base_url('backend/v_user_backend') . "';</script>";
-            }
-            else if ($cek == 1) {
+            } else if ($cek == 1) {
                 // pemberitahuan dan pindah page window
-                echo "<script>alert('Tidak Boleh Ada 2 Username yang Sama'); window.location = '" . base_url('backend/edit_user_backend/'.$id_user_b) . "';</script>";
-
+                echo "<script>alert('Tidak Boleh Ada 2 Username yang Sama'); window.location = '" . base_url('backend/edit_user_backend/' . $id_user_b) . "';</script>";
             } else {
 
                 // memasukkan data ke dalam array assoc
@@ -159,7 +159,7 @@ class User_backend extends CI_Controller
                 echo "<script>alert('Berhasil Update Data !'); window.location = '" . base_url('backend/v_user_backend') . "';</script>";
             }
         } else {   // pemberitahuan dan pindah page window
-            echo "<script>alert('Password dan konfirmasi password harus sama !!'); window.location = '" . base_url('backend/edit_user_backend/'.$id_user_b) . "';</script>";
+            echo "<script>alert('Password dan konfirmasi password harus sama !!'); window.location = '" . base_url('backend/edit_user_backend/' . $id_user_b) . "';</script>";
         }
     }
 }
