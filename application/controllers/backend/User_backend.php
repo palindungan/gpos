@@ -131,8 +131,7 @@ class User_backend extends CI_Controller
             // mengambil jumlah baris
             $cek = $this->M_user_backend->ambil_data($username)->num_rows();
 
-            if ($cek > 1) {
-
+            if ($cek == 1) {
                 // pemberitahuan dan pindah page window
                 echo "<script>alert('Tidak Boleh Ada 2 Username yang Sama'); window.location = '" . base_url('backend/v_user_backend') . "';</script>";
             } else {
