@@ -52,6 +52,7 @@ class User_backend extends CI_Controller
         $email_user_b = $this->input->post('email_user_b');
         $username = $this->input->post('username');
         $password = $this->input->post('password');
+        $now = date('Y-m-d H:i:s');
 
         $k_password = $this->input->post('k_password');
         if ($k_password == $password) {
@@ -65,7 +66,8 @@ class User_backend extends CI_Controller
                 'no_hp' => $no_hp,
                 'email_user_b' => $email_user_b,
                 'username' => $username,
-                'password' => password_hash($password, PASSWORD_DEFAULT)
+                'password' => password_hash($password, PASSWORD_DEFAULT),
+                'tgl_regist' => $now
             );
 
             // mengambil jumlah baris
