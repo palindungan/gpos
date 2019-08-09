@@ -70,4 +70,15 @@ class M_user_backend extends CI_Model
 
         return $this->db->get();
     }
+    function ambil_data_id($id_user_b)
+    {
+        $this->db->select('*');
+        $this->db->from('user_backend u');
+
+        $where = "u.id_user_b ='" . $id_user_b . "'";
+        $this->db->where($where);
+        $this->db->order_by('u.id_user_b', 'ASC');
+
+        return $this->db->get();
+    }
 }
