@@ -15,14 +15,14 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_bentuk_perhiasan') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_bentuk_perhiasan') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/bentuk_perhiasan/tambah_bentuk_perhiasan">Tambah Data</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/add_bentuk_perhiasan">Tambah Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_bentuk_perhiasan') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'v_bentuk_perhiasan') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan">Daftar Bentuk</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/v_bentuk_perhiasan">Daftar Bentuk</a>
                         </li>
                     </ul>
                     <div class="dropdown no-arrow">
@@ -66,7 +66,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                        <a href="<?= base_url() . 'backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan' ?>" class="btn btn-danger">Kembali</a>
+                        <a href="<?= base_url() . 'backend/v_bentuk_perhiasan' ?>" class="btn btn-danger">Kembali</a>
                         </form>
                     <?php } ?>
                 </div>

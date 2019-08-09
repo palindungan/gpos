@@ -42,7 +42,7 @@ class Bentuk_perhiasan extends CI_Controller
         $this->M_bentuk_perhiasan->input_data('bentuk_perhiasan', $data);
 
         // kembali ke halaman utama
-        redirect('backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan');
+        redirect('backend/v_bentuk_perhiasan');
     }
     // untuk ke menu edit data
     public function edit_bentuk_perhiasan($id)
@@ -77,7 +77,7 @@ class Bentuk_perhiasan extends CI_Controller
         $this->M_bentuk_perhiasan->update_data($where, $data, 'bentuk_perhiasan');
 
         // kembali ke halaman utama
-        redirect('backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan');
+        redirect('backend/v_bentuk_perhiasan');
     }
     function hapus_aksi($id)
     {
@@ -86,6 +86,6 @@ class Bentuk_perhiasan extends CI_Controller
 
         $this->M_bentuk_perhiasan->hapus_data('bentuk_perhiasan', $where);
 
-        redirect('backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan');
+        redirect('backend/v_bentuk_perhiasan');
     }
 }

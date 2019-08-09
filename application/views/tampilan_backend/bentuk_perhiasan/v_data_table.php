@@ -16,14 +16,14 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_bentuk_perhiasan') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_bentuk_perhiasan') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/bentuk_perhiasan/tambah_bentuk_perhiasan">Tambah Data</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/add_bentuk_perhiasan">Tambah Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_bentuk_perhiasan') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'v_bentuk_perhiasan') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan">Daftar Bentuk</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/v_bentuk_perhiasan">Daftar Bentuk</a>
                         </li>
                     </ul>
 
@@ -66,7 +66,7 @@
                                     <td><?= $d->tgl_input ?></td>
                                     <td>
                                         <div class="table-actions">
-                                            <a href="<?= site_url('backend/bentuk_perhiasan/edit_bentuk_perhiasan/' . $d->id_bentuk) ?>">Edit</a>
+                                            <a href="<?= site_url('backend/edit_bentuk_perhiasan/' . $d->id_bentuk) ?>">Edit</a>
                                             <a onclick="return confirm('Ingin Menghapus Data?');" href="<?= site_url('backend/bentuk_perhiasan/hapus_aksi/' . $d->id_bentuk) ?>" class="hapus">Hapus</a>
                                         </div>
                                     </td>

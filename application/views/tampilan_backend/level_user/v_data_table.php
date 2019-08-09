@@ -16,14 +16,14 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_paket_license') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_level_user') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/level_user/tambah_level_user">Tambah Data</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/add_level_user">Tambah Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_level_user') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'v_level_user') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/level_user/data_tabel_level_user">Daftar Level</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/v_level_user">Daftar Level</a>
                         </li>
                     </ul>
 
@@ -64,7 +64,7 @@
                                     <td><?= $d->jml_max ?></td>
                                     <td>
                                         <div class="table-actions">
-                                            <a href="<?= site_url('backend/level_user/edit_level_user/' . $d->id_level) ?>">Edit</a>
+                                            <a href="<?= site_url('backend/edit_level_user/' . $d->id_level) ?>">Edit</a>
                                             <a onclick="return confirm('Ingin Menghapus Data?');" href="<?= site_url('backend/level_user/hapus_aksi/' . $d->id_level) ?>" class="hapus">Hapus</a>
                                         </div>
                                     </td>

@@ -76,7 +76,7 @@ class User_backend extends CI_Controller
             if ($cek > 0) {
 
                 // pemberitahuan dan pindah page window
-                echo "<script>alert('Tidak Boleh Ada 2 Username yang Sama'); window.location = '" . base_url('backend/user_backend/tambah_user_backend') . "';</script>";
+                echo "<script>alert('Tidak Boleh Ada 2 Username yang Sama'); window.location = '" . base_url('backend/add_user_backend') . "';</script>";
             } else {
 
                 // mengirim data ke model untuk diinputkan ke dalam database
@@ -84,10 +84,10 @@ class User_backend extends CI_Controller
 
                 // kembali ke halaman utama
                 // redirect('backend/user_backend/tambah_user_backend');
-                echo "<script>alert('Berhasil Menambah Data !'); window.location = '" . base_url('backend/user_backend/tambah_user_backend') . "';</script>";
+                echo "<script>alert('Berhasil Menambah Data !'); window.location = '" . base_url('backend/v_user_backend') . "';</script>";
             }
         } else {   // pemberitahuan dan pindah page window
-            echo "<script>alert('Password dan konfirmasi password harus sama !!'); window.location = '" . base_url('backend/user_backend/tambah_user_backend') . "';</script>";
+            echo "<script>alert('Password dan konfirmasi password harus sama !!'); window.location = '" . base_url('backend/add_user_backend') . "';</script>";
         }
     }
 
@@ -97,7 +97,7 @@ class User_backend extends CI_Controller
         $where['id_user_b'] = $id;
 
         $this->M_user_backend->hapus_data('user_backend', $where);
-        redirect('backend/user_backend/data_tabel_user_backend');
+        redirect('backend/v_user_backend');
     }
 
     function update_aksi()
@@ -134,7 +134,7 @@ class User_backend extends CI_Controller
             if ($cek > 1) {
 
                 // pemberitahuan dan pindah page window
-                echo "<script>alert('Tidak Boleh Ada 2 Username yang Sama'); window.location = '" . base_url('backend/user_backend/data_tabel_user_backend') . "';</script>";
+                echo "<script>alert('Tidak Boleh Ada 2 Username yang Sama'); window.location = '" . base_url('backend/v_user_backend') . "';</script>";
             } else {
 
                 // memasukkan data ke dalam array assoc
@@ -145,10 +145,10 @@ class User_backend extends CI_Controller
                 // kembali ke halaman utama
                 // redirect('backend/user_backend/data_tabel_user_backend');
                 // pemberitahuan dan pindah page window
-                echo "<script>alert('Berhasil Update Data !'); window.location = '" . base_url('backend/user_backend/data_tabel_user_backend') . "';</script>";
+                echo "<script>alert('Berhasil Update Data !'); window.location = '" . base_url('backend/v_user_backend') . "';</script>";
             }
         } else {   // pemberitahuan dan pindah page window
-            echo "<script>alert('Password dan konfirmasi password harus sama !!'); window.location = '" . base_url('backend/user_backend/data_tabel_user_backend') . "';</script>";
+            echo "<script>alert('Password dan konfirmasi password harus sama !!'); window.location = '" . base_url('backend/v_user_backend') . "';</script>";
         }
     }
 }

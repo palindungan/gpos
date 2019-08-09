@@ -15,14 +15,14 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_user_backend') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_user_backend') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/user_backend/tambah_user_backend">Tambah Data</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/add_user_backend">Tambah Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'edit_user_backend') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'v_user_backend') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/user_backend/data_tabel_user_backend">Daftar User</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/v_user_backend">Daftar User</a>
                         </li>
                     </ul>
                     <div class="dropdown no-arrow">
@@ -114,7 +114,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary mr-2">Update</button>
-                        <a href="<?= base_url() . 'backend/user_backend/data_tabel_user_backend' ?>" class="btn btn-danger">Kembali</a>
+                        <a href="<?= base_url() . 'backend/v_user_backend' ?>" class="btn btn-danger">Kembali</a>
 
                         </form>
 

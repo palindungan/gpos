@@ -16,14 +16,14 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_paket_license') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_paket_license') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/paket_license/tambah_paket_license">Tambah Data</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/add_paket_license">Tambah Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_paket_license') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'v_paket_license') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/paket_license/data_tabel_paket_license">Daftar Paket</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/v_paket_license">Daftar Paket</a>
                         </li>
                     </ul>
 
@@ -66,7 +66,7 @@
                                     <td><?= $d->jml_hari_license ?></td>
                                     <td>
                                         <div class="table-actions">
-                                            <a href="<?= site_url('backend/paket_license/edit_paket_license/' . $d->id_paket) ?>">Edit</a>
+                                            <a href="<?= site_url('backend/edit_paket_license/' . $d->id_paket) ?>">Edit</a>
                                             <a onclick="return confirm('Ingin Menghapus Data?');" href="<?= site_url('backend/paket_license/hapus_aksi/' . $d->id_paket) ?>" class="hapus">Hapus</a>
                                         </div>
                                     </td>

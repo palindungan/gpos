@@ -16,14 +16,14 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_jalur_pembayaran') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_jalur_pembayaran') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/jalur_pembayaran/tambah_jalur_pembayaran">Tambah Jalur</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/add_jalur_pembayaran">Tambah Jalur</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_jalur_pembayaran') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'v_jalur_pembayaran') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/jalur_pembayaran/data_tabel_jalur_pembayaran">Data Tabel Jalur</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/v_jalur_pembayaran">Data Tabel Jalur</a>
                         </li>
                     </ul>
 
@@ -62,7 +62,7 @@
                                     <td><?php echo $d->nm_jalur ?></td>
                                     <td>
                                         <div class="table-actions">
-                                            <a href="<?php echo site_url('backend/jalur_pembayaran/edit_jalur_pembayaran/' . $d->id_jalur) ?>">Edit</a>
+                                            <a href="<?php echo site_url('backend/edit_jalur_pembayaran/' . $d->id_jalur) ?>">Edit</a>
                                             <a onclick="return confirm('Ingin Menghapus Data?');" href="<?= site_url('backend/jalur_pembayaran/hapus_aksi/' . $d->id_jalur) ?>" class="hapus">Hapus</a>
                                         </div>
                                     </td>

@@ -20,7 +20,7 @@
 
     <!-- Nav Item - Daftar User -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url() ?>backend/user_backend/tambah_user_backend">
+        <a class="nav-link" href="<?= base_url() . 'backend/add_user_backend' ?>">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Daftar User</span></a>
     </li>
@@ -56,8 +56,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= base_url() ?>backend/paket_license/tambah_paket_license">Paket License</a>
-                <a class="collapse-item" href="<?= base_url() ?>backend/jalur_pembayaran/tambah_jalur_pembayaran">Jalur Pembayaran</a>
+                <a class="collapse-item" href="<?= base_url() . 'backend/add_paket_license' ?>">Paket License</a>
+                <a class="collapse-item" href="<?= base_url() . 'backend/add_jalur_pembayaran' ?>">Jalur Pembayaran</a>
             </div>
         </div>
     </li>
@@ -70,8 +70,8 @@
         </a>
         <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= base_url() ?>backend/bentuk_perhiasan/tambah_bentuk_perhiasan">Bentuk Perhiasan</a>
-                <a class="collapse-item" href="<?= base_url() ?>backend/level_user/tambah_level_user">Level User</a>
+                <a class="collapse-item" href="<?= base_url() . 'backend/add_bentuk_perhiasan' ?>">Bentuk Perhiasan</a>
+                <a class="collapse-item" href="<?= base_url() . 'backend/add_level_user' ?>">Level User</a>
             </div>
         </div>
     </li>

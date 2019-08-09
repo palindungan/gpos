@@ -41,7 +41,7 @@ class Level_user extends CI_Controller
         $this->M_level_user->input_data('level_user', $data);
 
         // kembali ke halaman utama
-        redirect('backend/level_user/data_tabel_level_user');
+        redirect('backend/v_level_user');
     }
     // untuk ke menu edit data
     public function edit_level_user($id)
@@ -74,7 +74,7 @@ class Level_user extends CI_Controller
         $this->M_level_user->update_data($where, $data, 'level_user');
 
         // kembali ke halaman utama
-        redirect('backend/level_user/data_tabel_level_user');
+        redirect('backend/v_level_user');
     }
     function hapus_aksi($id)
     {
@@ -83,6 +83,6 @@ class Level_user extends CI_Controller
 
         $this->M_level_user->hapus_data('level_user', $where);
 
-        redirect('backend/level_user/data_tabel_level_user');
+        redirect('backend/v_level_user');
     }
 }

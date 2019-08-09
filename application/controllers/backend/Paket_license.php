@@ -43,13 +43,13 @@ class Paket_license extends CI_Controller
         $this->M_paket_license->input_data('paket_license', $data);
 
         // kembali ke halaman utama
-        redirect('backend/paket_license/data_tabel_paket_license');
+        redirect('backend/v_paket_license');
     }
     // untuk ke menu edit data
-    public function edit_paket_license($id_paket)
+    public function edit_paket_license($id)
     {
         // memasukkan data ke array
-        $where = array('id_paket' => $id_paket);
+        $where = array('id_paket' => $id);
 
         // fungsi result adalah mengenerate hasil querry menjadi array untuk di tampilkan
         $data['tbl_data'] = $this->M_paket_license->edit_data('paket_license', $where)->result();
@@ -78,7 +78,7 @@ class Paket_license extends CI_Controller
         $this->M_paket_license->update_data($where, $data, 'paket_license');
 
         // kembali ke halaman utama
-        redirect('backend/paket_license/data_tabel_paket_license');
+        redirect('backend/v_paket_license');
     }
     function hapus_aksi($id)
     {
@@ -87,6 +87,6 @@ class Paket_license extends CI_Controller
 
         $this->M_paket_license->hapus_data('paket_license', $where);
 
-        redirect('backend/paket_license/data_tabel_paket_license');
+        redirect('backend/v_paket_license');
     }
 }

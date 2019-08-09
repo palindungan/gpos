@@ -15,14 +15,14 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_paket_license') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_paket_license') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/paket_license/tambah_paket_license">Tambah Data</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/add_paket_license">Tambah Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_paket_license') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'v_paket_license') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/paket_license/data_tabel_paket_license">Daftar Paket</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/v_paket_license">Daftar Paket</a>
                         </li>
                     </ul>
                     <div class="dropdown no-arrow">
@@ -65,8 +65,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <a href="<?= base_url().'backend/paket_license/data_tabel_paket_license' ?>" class="btn btn-danger">Kembali</a>
-
+                    <a href="<?= base_url() . 'backend/v_paket_license' ?>" class="btn btn-danger">Kembali</a>
                     </form>
                 </div>
             </div>

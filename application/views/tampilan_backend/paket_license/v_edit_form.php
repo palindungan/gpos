@@ -16,14 +16,14 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_jalur_pembayaran') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_paket_license') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/jalur_pembayaran/tambah_jalur_pembayaran">Tambah Jalur</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/add_paket_license">Tambah Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'data_tabel_jalur_pembayaran') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'v_paket_license') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/jalur_pembayaran/data_tabel_jalur_pembayaran">Data Tabel Jalur</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/v_paket_license">Daftar Paket</a>
                         </li>
                     </ul>
 
@@ -48,8 +48,8 @@
                     <?php foreach ($tbl_data as $d2) { ?>
 
                         <?php echo form_open_multipart('backend/paket_license/update_aksi'); ?>
-                            <div class="row">
-                                <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="id_paket">Kode Paket</label>
                                     <input type="text" class="form-control" id="id_paket" name="id_paket" readonly="" value="<?php echo $d2->id_paket ?>">
@@ -76,7 +76,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                        <a href="<?= base_url().'backend/paket_license/data_tabel_paket_license' ?>" class="btn btn-danger">Kembali</a>
+                        <a href="<?= base_url() . 'backend/v_paket_license' ?>" class="btn btn-danger">Kembali</a>
 
                         </form>
 

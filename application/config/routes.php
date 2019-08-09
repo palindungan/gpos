@@ -53,19 +53,49 @@ $route['default_controller'] = 'frontend/home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = true;
 
-// FrontEnd
+// FRONTEND
 $route['transaksi'] = 'frontend/data_transaksi';
 $route['home'] = 'frontend/home';
 $route['kontak_kami'] = 'frontend/kontak_kami';
-// Tutup FrontEnd
+// Tutup FRONTED
 
-// Backend
+// BACKEND
 $route['backend'] = 'backend/home';
+
+// paket_license
+$route['backend/v_paket_license'] = 'backend/paket_license/data_tabel_paket_license';
+$route['backend/add_paket_license'] = 'backend/paket_license/tambah_paket_license';
+$route['backend/edit_paket_license/(:any)'] = 'backend/paket_license/edit_paket_license/$1';
+// tutup_paket_license
+
+// jalur_pembayaran
+$route['backend/v_jalur_pembayaran'] = 'backend/jalur_pembayaran/data_tabel_jalur_pembayaran';
+$route['backend/add_jalur_pembayaran'] = 'backend/jalur_pembayaran/tambah_jalur_pembayaran';
+$route['backend/edit_jalur_pembayaran/(:any)'] = 'backend/jalur_pembayaran/edit_jalur_pembayaran/$1';
+// tutup_jalur_pembayaran
+
+// bentuk_perhiasan
+$route['backend/v_bentuk_perhiasan'] = 'backend/bentuk_perhiasan/data_tabel_bentuk_perhiasan';
+$route['backend/add_bentuk_perhiasan'] = 'backend/bentuk_perhiasan/tambah_bentuk_perhiasan';
+$route['backend/edit_bentuk_perhiasan/(:any)'] = 'backend/bentuk_perhiasan/edit_bentuk_perhiasan/$1';
+// tutup_bentuk_perhiasan
+
+// level_user
+$route['backend/v_level_user'] = 'backend/level_user/data_tabel_level_user';
+$route['backend/add_level_user'] = 'backend/level_user/tambah_level_user';
+$route['backend/edit_level_user/(:any)'] = 'backend/level_user/edit_level_user/$1';
+// tutup_level_user
+
+// user_backend
+$route['backend/v_user_backend'] = 'backend/user_backend/data_tabel_user_backend';
+$route['backend/add_user_backend'] = 'backend/user_backend/tambah_user_backend';
+$route['backend/edit_user_backend/(:any)'] = 'backend/user_backend/edit_user_backend/$1';
+// tutup_user_backend
 // tutup backend
 
-// User
+// USER
 $route['user'] = 'user/home';
-// Tutup user
+// Tutup USER
 
 
 /*

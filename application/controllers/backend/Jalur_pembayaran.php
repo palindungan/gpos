@@ -57,7 +57,7 @@ class Jalur_pembayaran extends CI_Controller
         $this->M_jalur_pembayaran->input_data('jalur_pembayaran', $data);
 
         // kembali ke halaman utama
-        redirect('backend/jalur_pembayaran/tambah_jalur_pembayaran');
+        redirect('backend/v_jalur_pembayaran');
     }
 
     function hapus_aksi($id)
@@ -66,7 +66,7 @@ class Jalur_pembayaran extends CI_Controller
         $where['id_jalur'] = $id;
 
         $this->M_jalur_pembayaran->hapus_data('jalur_pembayaran', $where);
-        redirect('backend/jalur_pembayaran/tambah_jalur_pembayaran');
+        redirect('backend/v_jalur_pembayaran');
     }
 
     function update_aksi()
@@ -87,6 +87,6 @@ class Jalur_pembayaran extends CI_Controller
         $this->M_jalur_pembayaran->update_data($where, $data, 'jalur_pembayaran');
 
         // kembali ke halaman utama
-        redirect('backend/jalur_pembayaran/data_tabel_jalur_pembayaran');
+        redirect('backend/v_jalur_pembayaran');
     }
 }

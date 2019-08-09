@@ -16,14 +16,14 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'tambah_jalur_pembayaran') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_jalur_pembayaran') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/jalur_pembayaran/tambah_jalur_pembayaran">Tambah Jalur</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/add_jalur_pembayaran">Tambah Jalur</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('3') == 'edit_jalur_pembayaran') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'v_jalur_pembayaran') {
                                                     echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/jalur_pembayaran/data_tabel_jalur_pembayaran">Data Tabel Jalur</a>
+                                                } ?>" href="<?php echo base_url(); ?>backend/v_jalur_pembayaran">Data Tabel Jalur</a>
                         </li>
                     </ul>
 
@@ -44,32 +44,32 @@
                 <div class="card-body">
                     <!-- disini isinya konten -->
 
-                     <!-- disini isinya konten -->
-                <?php foreach ($tbl_data as $d2) { ?>
+                    <!-- disini isinya konten -->
+                    <?php foreach ($tbl_data as $d2) { ?>
 
-                    <?php echo form_open_multipart('backend/jalur_pembayaran/update_aksi'); ?>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="id_jalur">Kode Jalur</label>
-                                <input type="text" class="form-control" id="id_jalur" name="id_jalur" readonly="" value="<?php echo $d2->id_jalur ?>">
+                        <?php echo form_open_multipart('backend/jalur_pembayaran/update_aksi'); ?>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="id_jalur">Kode Jalur</label>
+                                    <input type="text" class="form-control" id="id_jalur" name="id_jalur" readonly="" value="<?php echo $d2->id_jalur ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nm_jalur">Nama Jalur</label>
+                                    <input type="text" class="form-control" id="nm_jalur" name="nm_jalur" placeholder="Nama Jalur" required="" oninvalid="this.setCustomValidity('isi Nama Jalur')" oninput="setCustomValidity('')" value="<?php echo $d2->nm_jalur ?>">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="nm_jalur">Nama Jalur</label>
-                                <input type="text" class="form-control" id="nm_jalur" name="nm_jalur" placeholder="Nama Jalur" required="" oninvalid="this.setCustomValidity('isi Nama Jalur')" oninput="setCustomValidity('')"  value="<?php echo $d2->nm_jalur ?>">
-                            </div>
-                        </div>
-                    </div>
 
-                    <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                    <a href="<?= base_url().'backend/jalur_pembayaran/data_tabel_jalur_pembayaran' ?>" class="btn btn-danger">Kembali</a>
+                        <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+                        <a href="<?= base_url() . 'backend/v_jalur_pembayaran' ?>" class="btn btn-danger">Kembali</a>
 
-                    </form>
+                        </form>
 
-                <?php
-                } ?>
+                    <?php
+                    } ?>
 
                 </div>
             </div>
