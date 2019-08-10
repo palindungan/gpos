@@ -60,7 +60,7 @@ $route['kontak_kami'] = 'frontend/kontak_kami';
 // Tutup FRONTED
 
 // BACKEND
-$route['backend'] = 'backend/home';
+$route['backend'] = 'backend/login';
 
 // paket_license
 $route['backend/v_paket_license'] = 'backend/paket_license/data_tabel_paket_license';

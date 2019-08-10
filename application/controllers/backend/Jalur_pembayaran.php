@@ -11,6 +11,11 @@ class Jalur_pembayaran extends CI_Controller
 
         // untuk mengakses model data (database)
         $this->load->model("backend/M_jalur_pembayaran");
+        // cek jika belum login (diambil dari helper)
+        if(!is_logged_in())
+        {
+            redirect('backend');
+        }
     }
 
     // untuk ke menu tambah form
