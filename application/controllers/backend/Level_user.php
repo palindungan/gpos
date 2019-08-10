@@ -11,6 +11,11 @@ class Level_user extends CI_Controller
 
         // untuk mengakses model data (database)
         $this->load->model("backend/M_level_user");
+        // cek jika belum login (diambil dari helper)
+        if(!is_logged_in())
+        {
+            redirect('backend');
+        }
     }
     function data_tabel_level_user()
     {

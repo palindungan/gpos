@@ -10,6 +10,11 @@ class Bentuk_perhiasan extends CI_Controller
         parent::__construct();
         // untuk mengakses model data (database)
         $this->load->model("backend/M_bentuk_perhiasan");
+        // cek jika belum login (diambil dari helper)
+        if(!is_logged_in())
+        {
+            redirect('backend');
+        }
     }
     function data_tabel_bentuk_perhiasan()
     {

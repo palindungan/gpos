@@ -11,6 +11,11 @@ class Paket_license extends CI_Controller
 
         // untuk mengakses model data (database)
         $this->load->model("backend/M_paket_license");
+        // cek jika belum login (diambil dari helper)
+        if(!is_logged_in())
+        {
+            redirect('backend');
+        }
     }
     function data_tabel_paket_license()
     {
