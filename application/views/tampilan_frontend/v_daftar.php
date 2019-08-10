@@ -16,42 +16,87 @@
                 </step-navigation>
 
                 <div v-show="currentstep == 1">
-                    <h3>Step 1</h3>
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <h3>Daftarkan Toko Emas Anda</h3>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="nm_toko">Nama Toko Emas</label>
+                                <input type="text" class="form-control" id="nm_toko" name="nm_toko" required="" oninvalid="this.setCustomValidity('Isi Nama Toko Emas')" oninput="setCustomValidity('')">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="almt_toko">Alamat Toko Emas</label>
+                                <textarea class="form-control" id="almt_toko" rows="3" name="almt_toko" required="" oninvalid="this.setCustomValidity('Isi Alamat')" oninput="setCustomValidity('')"></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div v-show="currentstep == 2">
-                    <h3>Step 2</h3>
-                    <div class="form-group">
-                        <label for="select">Example select</label>
-                        <select class="form-control" name="select">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                    <h3>Daftarkan Admin Toko</h3>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nm_user">Nama</label>
+                                <input type="text" class="form-control" id="nm_user" name="nm_user" placeholder="Nama" required="" oninvalid="this.setCustomValidity('Isi Nama')" oninput="setCustomValidity('')">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="jenkel">Jenis Kelamin</label>
+                                <select class="form-control" id="jenkel" name="jenkel" required="" oninvalid="this.setCustomValidity('Pilih Jenis Kelamin')" oninput="setCustomValidity('')">
+                                    <option value="">-</option>
+                                    <option value="pria">Pria</option>
+                                    <option value="wanita">Wanita</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="no_hp">No Hp</label>
+                                <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="No Hp" required="" oninvalid="this.setCustomValidity('Isi No Hp')" oninput="setCustomValidity('')">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email_user">Email</label>
+                                <input type="email" class="form-control" id="email_user" name="email_user" placeholder="Email" required="" oninvalid="this.setCustomValidity('Isi Alamat Email')" oninput="setCustomValidity('')">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div v-show="currentstep == 3">
                     <h3>Step 3</h3>
-                    <div class="form-group">
-                        <label for="textarea">Example textarea</label>
-                        <textarea class="form-control" name="textarea" rows="4"></textarea>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required="" oninvalid="this.setCustomValidity('Isi Username')" oninput="setCustomValidity('')">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="file">File input</label>
-                        <input type="file" class="form-control-file" name="file" aria-describedby="fileHelp">
-                        <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="" oninvalid="this.setCustomValidity('Isi Password')" oninput="setCustomValidity('')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="k_password">Konfirmasi Password</label>
+                                <input type="password" class="form-control" id="k_password" name="k_password" placeholder="Konfirmasi Password" required="" oninvalid="this.setCustomValidity('Isi Konfirmasi Password')" oninput="setCustomValidity('')">
+                            </div>
+                        </div>
                     </div>
                 </div>
 

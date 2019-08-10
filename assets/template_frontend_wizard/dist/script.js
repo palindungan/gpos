@@ -1,88 +1,87 @@
 Vue.component("step-navigation-step", {
-    template: "#step-navigation-step-template",
+	template: "#step-navigation-step-template",
 
-    props: ["step", "currentstep"],
+	props: ["step", "currentstep"],
 
-    computed: {
-        indicatorclass() {
-            return {
-                active: this.step.id == this.currentstep,
-                complete: this.currentstep > this.step.id
-            };
-        }
-    }
+	computed: {
+		indicatorclass() {
+			return {
+				active: this.step.id == this.currentstep,
+				complete: this.currentstep > this.step.id
+			};
+		}
+	}
 });
 
 Vue.component("step-navigation", {
-    template: "#step-navigation-template",
+	template: "#step-navigation-template",
 
-    props: ["steps", "currentstep"]
+	props: ["steps", "currentstep"]
 });
 
 Vue.component("step", {
-    template: "#step-template",
+	template: "#step-template",
 
-    props: ["step", "stepcount", "currentstep"],
+	props: ["step", "stepcount", "currentstep"],
 
-    computed: {
-        active() {
-            return this.step.id == this.currentstep;
-        },
+	computed: {
+		active() {
+			return this.step.id == this.currentstep;
+		},
 
-        firststep() {
-            return this.currentstep == 1;
-        },
+		firststep() {
+			return this.currentstep == 1;
+		},
 
-        laststep() {
-            return this.currentstep == this.stepcount;
-        },
+		laststep() {
+			return this.currentstep == this.stepcount;
+		},
 
-        stepWrapperClass() {
-            return {
-                active: this.active
-            };
-        }
-    },
+		stepWrapperClass() {
+			return {
+				active: this.active
+			};
+		}
+	},
 
-    methods: {
-        nextStep() {
-            this.$emit("step-change", this.currentstep + 1);
-        },
+	methods: {
+		nextStep() {
+			this.$emit("step-change", this.currentstep + 1);
+		},
 
-        lastStep() {
-            this.$emit("step-change", this.currentstep - 1);
-        }
-    }
+		lastStep() {
+			this.$emit("step-change", this.currentstep - 1);
+		}
+	}
 });
 
 new Vue({
-    el: "#app",
+	el: "#app",
 
-    data: {
-        currentstep: 1,
+	data: {
+		currentstep: 1,
 
-        steps: [
-            {
-                id: 1,
-                title: "Personal",
-                icon_class: "fa fa-user-circle-o"
-            },
-            {
-                id: 2,
-                title: "Details",
-                icon_class: "fa fa-th-list"
-            },
-            {
-                id: 3,
-                title: "Send",
-                icon_class: "fa fa-paper-plane"
-            }
-        ]
-    },
+		steps: [{
+				id: 1,
+				title: "Data Toko Emas",
+				icon_class: "fa fa-shopping-bag"
+			},
+			{
+				id: 2,
+				title: "Data Admin Toko",
+				icon_class: "fa fa-user-circle-o"
+			},
+			{
+				id: 3,
+				title: "Finish",
+				icon_class: "fa fa-paper-plane"
+			}
+		]
+	},
 
-    methods: {
-        stepChanged(step) {
-            this.currentstep = step;
-        }
-    }
+	methods: {
+		stepChanged(step) {
+			this.currentstep = step;
+		}
+	}
 });
