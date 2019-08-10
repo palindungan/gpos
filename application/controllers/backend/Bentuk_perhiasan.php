@@ -30,6 +30,7 @@ class Bentuk_perhiasan extends CI_Controller
 
     function tambah_aksi()
     {
+        date_default_timezone_set('Asia/Jakarta');
         // mengambil dari inputan (name)
         $kode = $this->M_bentuk_perhiasan->get_no();
         $id_user_b = $this->input->post('id_user_b');
@@ -62,6 +63,7 @@ class Bentuk_perhiasan extends CI_Controller
     }
     function update_aksi()
     {
+        date_default_timezone_set('Asia/Jakarta');
         // mengambil dari inputan (name)
         $id_bentuk = $this->input->post('id_bentuk');
         $id_user_b = $this->input->post('id_user_b');

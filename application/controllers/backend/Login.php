@@ -31,13 +31,13 @@ class Login extends CI_Controller
 
             // mengambil data dari database berdasarkan username
             $query = $this->M_login->ambil_data($username);
+            $query2 = $this->M_login->ambil_data($username)->result_array();
+            $status_login = $query2[0]['status_login'];
 
             // mengeluarkan data dari database
             foreach ($query->result_array() as $row) {
-
                 // dicek apakah data inputan sama dengan data di database
-                if (password_verify($password, $row["password"])) {
-
+                if (password_verify($password, $row["password"]) && $status_login == "0") {
                     // session
                     $data_session = array(
                         'id_user_b' => $row['id_user_b'],
@@ -53,7 +53,8 @@ class Login extends CI_Controller
 
                     // memasukkan data ke dalam array assoc
                     $data = array(
-                        'tgl_last_log_in' => $now
+                        'tgl_last_log_in' => $now,
+                        'status_login' => "1"
                     );
 
                     // memasukkan data ke dalam array assoc
@@ -64,17 +65,24 @@ class Login extends CI_Controller
                     // link
                     redirect('backend/home');
                 } else {
-                    echo "<script> alert('Password Anda Salah'); window.location.href = '" . base_url() . "backend/login'; </script>";
+                    echo "<script> alert('Password Anda Salah Atau Sedang Digunakan'); window.location.href = '" . base_url() . "backend'; </script>";
                 }
             }
-        } else {
+        }
+         else {
 
-            echo "<script> alert('Username Tidak Ada'); window.location.href = '" . base_url() . "backend/login'; </script>";
+            echo "<script> alert('Username Tidak Ada'); window.location.href = '" . base_url() . "backend'; </script>";
         }
     }
 
     function logout()
     {
+        $id_user_b = $_SESSION["id_user_b"];
+        $where['id_user_b'] = $id_user_b;
+        $data = array(
+            'status_login' => "0"
+        );
+        $this->M_login->update_data($where, $data, 'user_backend');
         $this->session->sess_destroy();
         redirect(base_url('backend'));
     }

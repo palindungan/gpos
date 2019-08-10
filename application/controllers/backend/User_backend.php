@@ -74,7 +74,8 @@ class User_backend extends CI_Controller
                 'email_user_b' => $email_user_b,
                 'username' => $username,
                 'password' => password_hash($password, PASSWORD_DEFAULT),
-                'tgl_regist' => $now
+                'tgl_regist' => $now,
+                'status_login' => "0"
             );
 
             // mengambil jumlah baris
