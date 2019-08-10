@@ -51,7 +51,7 @@ if ($this->uri->segment('1') == 'home') {
 <!-- <div id="preloader"></div> -->
 
 <!-- JavaScript Libraries -->
-<?php $this->load->view("_partials_frontend/java_script.php") ?>
+<?php $this->load->view("_partials_frontend/javascript.php") ?>
 <!-- End of JavaScript Libraries -->
 
 </body>
