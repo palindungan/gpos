@@ -73,8 +73,8 @@ new Vue({
 			},
 			{
 				id: 3,
-				title: "Finish",
-				icon_class: "fa fa-paper-plane"
+				title: "Username Dan Password",
+				icon_class: "fa fa-unlock-alt"
 			}
 		]
 	},

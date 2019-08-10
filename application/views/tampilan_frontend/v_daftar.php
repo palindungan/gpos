@@ -74,7 +74,7 @@
                 </div>
 
                 <div v-show="currentstep == 3">
-                    <h3>Step 3</h3>
+                    <h3>Username Dan Password</h3>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
