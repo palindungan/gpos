@@ -11,6 +11,7 @@
     <!-- partial:index.partial.html -->
     <form method="POST" action="">
         <div class="container">
+            <br>
             <div id="app">
                 <step-navigation :steps="steps" :currentstep="currentstep">
                 </step-navigation>
