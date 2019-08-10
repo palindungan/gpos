@@ -14,7 +14,7 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_paket_license') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_paket_license' || 'paket_license/tambah_aksi') {
                                                     echo 'active';
                                                 } ?>" href="<?php echo base_url(); ?>backend/add_paket_license">Tambah Data</a>
                         </li>
@@ -46,19 +46,28 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="nm_paketr">Nama Paket</label>
-                                <input type="text" class="form-control" id="nm_paketr" name="nm_paket" placeholder="Nama Paket" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')">
+                                <input type="text" class="form-control <?php if(form_error('nm_paket')== true) { echo "is-invalid";} ?>" id="nm_paketr" name="nm_paket" placeholder="Nama Paket"  oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= set_value('nm_paket') ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('nm_paket'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="hrg_paket">Harga Paket</label>
-                                <input type="text" class="form-control" id="hrg_paket" name="hrg_paket" placeholder="Harga Paket" required="" oninvalid="this.setCustomValidity('Isi Harga Paket')" oninput="setCustomValidity('')">
+                                <input type="text" class="form-control <?php if(form_error('hrg_paket')== true) { echo "is-invalid";} ?>" id="hrg_paket" name="hrg_paket" placeholder="Harga Paket"  oninvalid="this.setCustomValidity('Isi Harga Paket')" oninput="setCustomValidity('')" value="<?= set_value('hrg_paket') ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('hrg_paket'); ?>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="jml_hari">Jumlah Hari License</label>
-                                <input type="text" class="form-control" id="jml_hari" name="jml_hari" placeholder="Jumlah Hari License" required="" oninvalid="this.setCustomValidity('Isi Jumlah Hari License')" oninput="setCustomValidity('')">
+                                <input type="text" class="form-control <?php if(form_error('jml_hari')== true) { echo "is-invalid";} ?>" id="jml_hari" name="jml_hari" placeholder="Jumlah Hari License"  oninvalid="this.setCustomValidity('Isi Jumlah Hari License')" oninput="setCustomValidity('')" value="<?= set_value('jml_hari') ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('jml_hari'); ?>
+                                </div>
                             </div>
                         </div>
                     </div>

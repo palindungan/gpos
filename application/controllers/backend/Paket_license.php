@@ -36,19 +36,32 @@ class Paket_license extends CI_Controller
         $nm_paket = $this->input->post('nm_paket');
         $hrg_paket = $this->input->post('hrg_paket');
         $jml_hari = $this->input->post('jml_hari');
-        // memasukkan data ke dalam array assoc
-        $data = array(
-            'id_paket' => $kode,
-            'nm_paket' => $nm_paket,
-            'hrg_paket' => $hrg_paket,
-            'jml_hari_license' => $jml_hari
-        );
+        // validasi
+        $this->form_validation->set_rules('nm_paket', 'Nama Paket', 'required|alpha');
+        $this->form_validation->set_rules('hrg_paket', 'Harga Paket', 'required|numeric');
+        $this->form_validation->set_rules('jml_hari', 'Jumlah Hari', 'required|numeric');
 
-        // mengirim data ke model untuk diinputkan ke dalam database
-        $this->M_paket_license->input_data('paket_license', $data);
+        if ($this->form_validation->run() == FALSE)
+        {
+            $this->template->load('template_backend', 'tampilan_backend/paket_license/v_tambah_form');
+        }
+        else
+        {
+            // memasukkan data ke dalam array assoc
+            $data = array(
+                'id_paket' => $kode,
+                'nm_paket' => $nm_paket,
+                'hrg_paket' => $hrg_paket,
+                'jml_hari_license' => $jml_hari
+            );
 
-        // kembali ke halaman utama
-        redirect('backend/v_paket_license');
+            // mengirim data ke model untuk diinputkan ke dalam database
+            $this->M_paket_license->input_data('paket_license', $data);
+
+            // kembali ke halaman utama
+            redirect('backend/v_paket_license');
+        }
+        
     }
     // untuk ke menu edit data
     public function edit_paket_license($id)
@@ -68,22 +81,39 @@ class Paket_license extends CI_Controller
         $nm_paket = $this->input->post('nm_paket');
         $hrg_paket = $this->input->post('hrg_paket');
         $jml_hari = $this->input->post('jml_hari');
+        // validasi
+        $this->form_validation->set_rules('nm_paket', 'Nama Paket', 'required|alpha');
+        $this->form_validation->set_rules('hrg_paket', 'Harga Paket', 'required|numeric');
+        $this->form_validation->set_rules('jml_hari', 'Jumlah Hari', 'required|numeric');
+        if ($this->form_validation->run() == FALSE)
+        {
+            // memasukkan data ke array
+            $where = array('id_paket' => $id_paket);
 
-        // memasukkan data ke dalam array assoc
-        $data = array(
-            'id_paket' => $id_paket,
-            'nm_paket' => $nm_paket,
-            'hrg_paket' => $hrg_paket,
-            'jml_hari_license' => $jml_hari
-        );
+            // fungsi result adalah mengenerate hasil querry menjadi array untuk di tampilkan
+            $data['tbl_data'] = $this->M_paket_license->edit_data('paket_license', $where)->result();
 
-        // memasukkan data ke dalam array assoc
-        $where['id_paket'] = $id_paket;
+            $this->template->load('template_backend', 'tampilan_backend/paket_license/v_edit_form', $data);
+        }
+        else
+        {
+            // memasukkan data ke dalam array assoc
+            $data = array(
+                'id_paket' => $id_paket,
+                'nm_paket' => $nm_paket,
+                'hrg_paket' => $hrg_paket,
+                'jml_hari_license' => $jml_hari
+            );
 
-        $this->M_paket_license->update_data($where, $data, 'paket_license');
+            // memasukkan data ke dalam array assoc
+            $where['id_paket'] = $id_paket;
 
-        // kembali ke halaman utama
-        redirect('backend/v_paket_license');
+            $this->M_paket_license->update_data($where, $data, 'paket_license');
+
+            // kembali ke halaman utama
+            redirect('backend/v_paket_license');
+        }
+        
     }
     function hapus_aksi($id)
     {
