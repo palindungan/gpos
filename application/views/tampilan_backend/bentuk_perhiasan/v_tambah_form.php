@@ -46,7 +46,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="id_user_b">ID Backend</label>
-                                <input type="text" class="form-control" id="id_user_b" name="id_user_b" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="UB01" readonly>
+                                <input type="text" class="form-control" id="id_user_b" name="id_user_b" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= $_SESSION['id_user_b']?>" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">

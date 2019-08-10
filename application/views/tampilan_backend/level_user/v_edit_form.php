@@ -52,18 +52,25 @@
                                 <div class="form-group">
                                     <label for="id_level">ID Level</label>
                                     <input type="text" class="form-control" id="id_level" name="id_level" placeholder="ID Level" required="" oninvalid="this.setCustomValidity('Isi ID Level')" oninput="setCustomValidity('')" readonly value="<?= $d2->id_level ?>">
+                                    
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nm_level">Nama Level</label>
-                                    <input type="text" class="form-control" id="nm_level" name="nm_level" placeholder="Nama Level" required="" oninvalid="this.setCustomValidity('Isi Nama Level')" oninput="setCustomValidity('')" value="<?= $d2->nm_level ?>">
+                                    <input type="text" class="form-control <?php if(form_error('nm_level')== true) { echo "is-invalid";} ?>" id="nm_level" name="nm_level" placeholder="Nama Level" oninvalid="this.setCustomValidity('Isi Nama Level')" oninput="setCustomValidity('')" value="<?= set_value('nm_level', $d2->nm_level); ?>">
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('nm_level'); ?>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="jml_max">Jumlah Max</label>
-                                    <input type="text" class="form-control" id="jml_max" name="jml_max" placeholder="Jumlah Max" required="" oninvalid="this.setCustomValidity('Isi Jumlah Max')" oninput="setCustomValidity('')" value="<?= $d2->jml_max ?>">
+                                    <input type="text" class="form-control <?php if(form_error('jml_max')== true) { echo "is-invalid";} ?>" id="jml_max" name="jml_max" placeholder="Jumlah Max" oninvalid="this.setCustomValidity('Isi Jumlah Max')" oninput="setCustomValidity('')" value="<?= set_value('jml_max', $d2->jml_max); ?>">
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('jml_max'); ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>

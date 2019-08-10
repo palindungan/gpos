@@ -53,7 +53,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="id_user_backend">ID Backend</label>
-                                    <input type="text" class="form-control" id="id_user_backend" name="id_user_backend" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= $d2->id_user_b ?>" readonly>
+                                    <input type="text" class="form-control" id="id_user_backend" name="id_user_backend" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= $_SESSION['id_user_b'] ?>" readonly>
                                 </div>
                             </div>
                             <div class="col-md-6">
