@@ -24,6 +24,7 @@ if ($this->uri->segment('1') == 'home') {
                         } ?>"><a href="<?= base_url() . 'kontak_kami' ?>">Contact</a></li>
             <li class=""><a href="<?= base_url() . 'backend' ?>">Link Backend</a></li>
             <li class=""><a href="<?= base_url() . 'user' ?>">Link User</a></li>
+            <li class=""><a href="<?= base_url() . 'user' ?>">Register</a></li>
         </ul>
     </nav><!-- .main-nav -->
 
