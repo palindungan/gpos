@@ -1,10 +1,6 @@
-<meta charset="utf-8">
-<title>Daftar Account</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="colorlib.com">
-
-<!-- MATERIAL DESIGN ICONIC FONT -->
-<link rel="stylesheet" href="<?= base_url() ?>assets/template_frontend_wizard/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
-
-<!-- STYLE CSS -->
-<link rel="stylesheet" href="<?= base_url() ?>assets/template_frontend_wizard/css/style.css">
+<meta charset="UTF-8">
+<title>Bootstrap Wizard powered by Vue2</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel="stylesheet" href="<?= base_url() ?>assets/template_frontend_wizard/dist/style.css">
