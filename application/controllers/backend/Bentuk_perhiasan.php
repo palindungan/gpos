@@ -30,25 +30,37 @@ class Bentuk_perhiasan extends CI_Controller
 
     function tambah_aksi()
     {
+
         date_default_timezone_set('Asia/Jakarta');
         // mengambil dari inputan (name)
         $kode = $this->M_bentuk_perhiasan->get_no();
         $id_user_b = $this->input->post('id_user_b');
         $nm_bentuk = $this->input->post('nm_bentuk');
+        // validasi
+        $this->form_validation->set_rules('nm_bentuk', 'Nama Bentuk', 'required|alpha');
         $now = date('Y-m-d H:i:s');
-        // memasukkan data ke dalam array assoc
-        $data = array(
-            'id_bentuk' => $kode,
-            'id_user_b' => $id_user_b,
-            'nm_bentuk' => $nm_bentuk,
-            'tgl_input' => $now
-        );
+        if ($this->form_validation->run() == FALSE)
+        {
+            $this->template->load('template_backend', 'tampilan_backend/bentuk_perhiasan/v_tambah_form');
+        }
+        else
+        {
+            // memasukkan data ke dalam array assoc
+            $data = array(
+                'id_bentuk' => $kode,
+                'id_user_b' => $id_user_b,
+                'nm_bentuk' => $nm_bentuk,
+                'tgl_input' => $now
+            );
 
-        // mengirim data ke model untuk diinputkan ke dalam database
-        $this->M_bentuk_perhiasan->input_data('bentuk_perhiasan', $data);
+            // mengirim data ke model untuk diinputkan ke dalam database
+            $this->M_bentuk_perhiasan->input_data('bentuk_perhiasan', $data);
 
-        // kembali ke halaman utama
-        redirect('backend/v_bentuk_perhiasan');
+            // kembali ke halaman utama
+            redirect('backend/v_bentuk_perhiasan');
+        }
+        
+        
     }
     // untuk ke menu edit data
     public function edit_bentuk_perhiasan($id)
@@ -69,22 +81,35 @@ class Bentuk_perhiasan extends CI_Controller
         $id_user_b = $this->input->post('id_user_b');
         $nm_bentuk = $this->input->post('nm_bentuk');
         $now = date('Y-m-d H:i:s');
+        //validasi
+        $this->form_validation->set_rules('nm_bentuk', 'Nama Bentuk', 'required|alpha');
+        if ($this->form_validation->run() == FALSE)
+        {
+            $where = array('id_bentuk' => $id_bentuk);
 
-        // memasukkan data ke dalam array assoc
-        $data = array(
-            'id_bentuk' => $id_bentuk,
-            'id_user_b' => $id_user_b,
-            'nm_bentuk' => $nm_bentuk,
-            'tgl_input' => $now
-        );
+            // fungsi result adalah mengenerate hasil querry menjadi array untuk di tampilkan
+            $data['tbl_data'] = $this->M_bentuk_perhiasan->edit_data('bentuk_perhiasan', $where)->result();
 
-        // memasukkan data ke dalam array assoc
-        $where['id_bentuk'] = $id_bentuk;
+            $this->template->load('template_backend', 'tampilan_backend/bentuk_perhiasan/v_edit_form', $data);
+        }
+        else
+        {
+            // memasukkan data ke dalam array assoc
+            $data = array(
+                'id_bentuk' => $id_bentuk,
+                'id_user_b' => $id_user_b,
+                'nm_bentuk' => $nm_bentuk,
+                'tgl_input' => $now
+            );
+            // memasukkan data ke dalam array assoc
+            $where['id_bentuk'] = $id_bentuk;
 
-        $this->M_bentuk_perhiasan->update_data($where, $data, 'bentuk_perhiasan');
+            $this->M_bentuk_perhiasan->update_data($where, $data, 'bentuk_perhiasan');
 
-        // kembali ke halaman utama
-        redirect('backend/v_bentuk_perhiasan');
+            // kembali ke halaman utama
+            redirect('backend/v_bentuk_perhiasan'); 
+        }
+        
     }
     function hapus_aksi($id)
     {

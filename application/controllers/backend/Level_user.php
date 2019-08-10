@@ -90,6 +90,7 @@ class Level_user extends CI_Controller
         }
         else
         {
+            // memasukkan data ke dalam array assoc
             $data = array(
                 'id_level' => $id_level,
                 'nm_level' => $nm_level,
@@ -104,7 +105,6 @@ class Level_user extends CI_Controller
             // kembali ke halaman utama
             redirect('backend/v_level_user');
         }
-        // memasukkan data ke dalam array assoc
         
     }
     function hapus_aksi($id)

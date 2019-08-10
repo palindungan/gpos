@@ -1,12 +1,9 @@
 <div class="container-fluid">
-
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Bentuk Perhiasan</h1>
     </div>
-
     <div class="row">
-
         <!-- Area Chart -->
         <div class="col-xl-12">
             <div class="card shadow mb-4">
@@ -14,14 +11,14 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_bentuk_perhiasan') {
-                                                    echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/add_bentuk_perhiasan">Tambah Data</a>
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_bentuk_perhiasan' || 'bentuk_perhiasan/tambah_aksi') {
+                                echo 'active';
+                            } ?>" href="<?php echo base_url(); ?>backend/add_bentuk_perhiasan">Tambah Data</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link <?php if ($this->uri->segment('2') == 'v_bentuk_perhiasan') {
-                                                    echo 'active';
-                                                } ?>" href="<?php echo base_url(); ?>backend/v_bentuk_perhiasan">Daftar Bentuk</a>
+                                echo 'active';
+                            } ?>" href="<?php echo base_url(); ?>backend/v_bentuk_perhiasan">Daftar Bentuk</a>
                         </li>
                     </ul>
                     <div class="dropdown no-arrow">
@@ -40,7 +37,6 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <!-- disini isinya konten -->
-
                     <?php echo form_open_multipart('backend/bentuk_perhiasan/tambah_aksi'); ?>
                     <div class="row">
                         <div class="col-md-6">
@@ -52,17 +48,18 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="nm_bentuk">Nama Bentuk</label>
-                                <input type="text" class="form-control" id="nm_bentuk" name="nm_bentuk" placeholder="Bentuk Perhiasan" required="" oninvalid="this.setCustomValidity('Isi Bentuk Perhiasan')" oninput="setCustomValidity('')">
+                                <input type="text" class="form-control <?php if(form_error('nm_bentuk')== true) { echo "is-invalid";} ?>" id="nm_bentuk" name="nm_bentuk" placeholder="Bentuk Perhiasan" oninvalid="this.setCustomValidity('Isi Bentuk Perhiasan')" oninput="setCustomValidity('')" value="<?= set_value('nm_bentuk') ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('nm_bentuk'); ?>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                     <a href="<?= base_url() . 'backend/v_bentuk_perhiasan' ?>" class="btn btn-danger">Kembali</a>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
-
     </div>
+</div>
 </div>

@@ -53,13 +53,16 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="id_user_backend">ID Backend</label>
-                                    <input type="text" class="form-control" id="id_user_backend" name="id_user_backend" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= $_SESSION['id_user_b'] ?>" readonly>
+                                    <input type="text" class="form-control" id="id_user_backend" name="id_user_b" placeholder="ID USER" required="" oninvalid="this.setCustomValidity('Isi Nama Paket')" oninput="setCustomValidity('')" value="<?= $_SESSION['id_user_b'] ?>" readonly>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nm_bentuk">Nama Bentuk</label>
-                                    <input type="text" class="form-control" id="nm_bentuk" name="nm_bentuk" placeholder="Bentuk Perhiasan" required="" oninvalid="this.setCustomValidity('Isi Bentuk Perhiasan')" oninput="setCustomValidity('')" value="<?= $d2->nm_bentuk ?>">
+                                    <input type="text" class="form-control <?php if(form_error('nm_bentuk')== true) { echo "is-invalid";} ?>" id="nm_bentuk" name="nm_bentuk" placeholder="Bentuk Perhiasan" required="" oninvalid="this.setCustomValidity('Isi Bentuk Perhiasan')" oninput="setCustomValidity('')" value="<?= set_value('nm_bentuk', $d2->nm_bentuk); ?>">
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('nm_bentuk'); ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
