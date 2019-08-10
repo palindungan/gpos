@@ -15,7 +15,7 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_jalur_pembayaran') {
+                            <a class="nav-link <?php if ($this->uri->segment('2') == 'add_jalur_pembayaran' || 'jalur_pembayaran/tambah_aksi') {
                                                     echo 'active';
                                                 } ?>" href="<?php echo base_url(); ?>backend/add_jalur_pembayaran">Tambah Jalur</a>
                         </li>
@@ -48,7 +48,10 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="nm_jalur">Nama Jalur</label>
-                                <input type="text" class="form-control" id="nm_jalur" name="nm_jalur" placeholder="Nama Jalur" required="" oninvalid="this.setCustomValidity('isi Nama Jalur')" oninput="setCustomValidity('')">
+                                <input type="text" class="form-control <?php if(form_error('nm_jalur')== true) { echo "is-invalid";} ?>" id="nm_jalur" name="nm_jalur" placeholder="Nama Jalur" oninvalid="this.setCustomValidity('isi Nama Jalur')" oninput="setCustomValidity('')" value="<?= set_value('nm_jalur') ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('nm_jalur'); ?>
+                                </div>
                             </div>
                         </div>
                     </div>

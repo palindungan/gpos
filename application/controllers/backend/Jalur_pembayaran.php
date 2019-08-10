@@ -51,18 +51,27 @@ class Jalur_pembayaran extends CI_Controller
         // mengambil dari inputan (name)
         $kode = $this->M_jalur_pembayaran->get_no();
         $nm_jalur = $this->input->post('nm_jalur');
+        //validasi
+        $this->form_validation->set_rules('nm_jalur', 'Nama Jalur', 'required|alpha');
+        if ($this->form_validation->run() == FALSE)
+        {
+            $this->template->load('template_backend', 'tampilan_backend/jalur_pembayaran/v_tambah_form');
+        }
+        else
+        {
+            // memasukkan data ke dalam array assoc
+            $data = array(
+                'id_jalur' => $kode,
+                'nm_jalur' => $nm_jalur
+            );
 
-        // memasukkan data ke dalam array assoc
-        $data = array(
-            'id_jalur' => $kode,
-            'nm_jalur' => $nm_jalur
-        );
+            // mengirim data ke model untuk diinputkan ke dalam database
+            $this->M_jalur_pembayaran->input_data('jalur_pembayaran', $data);
 
-        // mengirim data ke model untuk diinputkan ke dalam database
-        $this->M_jalur_pembayaran->input_data('jalur_pembayaran', $data);
-
-        // kembali ke halaman utama
-        redirect('backend/v_jalur_pembayaran');
+            // kembali ke halaman utama
+            redirect('backend/v_jalur_pembayaran');
+        }
+        
     }
 
     function hapus_aksi($id)
@@ -79,19 +88,33 @@ class Jalur_pembayaran extends CI_Controller
         // mengambil dari inputan (name)
         $id_jalur = $this->input->post('id_jalur');
         $nm_jalur = $this->input->post('nm_jalur');
+        //validasi
+        $this->form_validation->set_rules('nm_jalur', 'Nama Jalur', 'required|alpha');
+        if ($this->form_validation->run() == FALSE)
+        {
+            $where = array('id_jalur' => $id_jalur);
 
-        // memasukkan data ke dalam array assoc
-        $data = array(
-            'id_jalur' => $id_jalur,
-            'nm_jalur' => $nm_jalur
-        );
+            // fungsi result adalah mengenerate hasil querry menjadi array untuk di tampilkan
+            $data['tbl_data'] = $this->M_jalur_pembayaran->edit_data('jalur_pembayaran', $where)->result();
 
-        // memasukkan data ke dalam array assoc
-        $where['id_jalur'] = $id_jalur;
+            $this->template->load('template_backend', 'tampilan_backend/jalur_pembayaran/v_edit_form', $data);
+        }
+        else
+        {
+            // memasukkan data ke dalam array assoc
+            $data = array(
+                'id_jalur' => $id_jalur,
+                'nm_jalur' => $nm_jalur
+            );
 
-        $this->M_jalur_pembayaran->update_data($where, $data, 'jalur_pembayaran');
+            // memasukkan data ke dalam array assoc
+            $where['id_jalur'] = $id_jalur;
 
-        // kembali ke halaman utama
-        redirect('backend/v_jalur_pembayaran');
+            $this->M_jalur_pembayaran->update_data($where, $data, 'jalur_pembayaran');
+
+            // kembali ke halaman utama
+            redirect('backend/v_jalur_pembayaran');
+        }
+        
     }
 }

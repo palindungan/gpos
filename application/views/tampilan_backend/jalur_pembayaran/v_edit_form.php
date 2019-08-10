@@ -57,7 +57,10 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nm_jalur">Nama Jalur</label>
-                                    <input type="text" class="form-control" id="nm_jalur" name="nm_jalur" placeholder="Nama Jalur" required="" oninvalid="this.setCustomValidity('isi Nama Jalur')" oninput="setCustomValidity('')" value="<?php echo $d2->nm_jalur ?>">
+                                    <input type="text" class="form-control <?php if(form_error('nm_jalur')== true) { echo "is-invalid";} ?>" id="nm_jalur" name="nm_jalur" placeholder="Nama Jalur" required="" oninvalid="this.setCustomValidity('isi Nama Jalur')" oninput="setCustomValidity('')" value="<?= set_value('nm_jalur', $d2->nm_jalur); ?>">
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('nm_jalur'); ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
